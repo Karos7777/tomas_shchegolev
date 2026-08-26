@@ -4,14 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#05081e">
-<meta name="description" content="Tomas Shchegolev — креативный разработчик и дизайнер. KarosGuard — приложение в Google Play.">
-<meta property="og:title" content="Tomas Shchegolev — Portfolio">
-<meta property="og:description" content="Креативный разработчик и дизайнер | 28 лет. Мобильные приложения, дизайн и видеомонтаж.">
+<meta name="description" content="Tomas Shchegolev — Product Manager / Создатель продуктов. Релиз и развитие мобильного приложения KarosGuard в Google Play (48+ итераций).">
+<meta property="og:title" content="Tomas Shchegolev — Product Manager">
+<meta property="og:description" content="Product Manager / Создатель продуктов. Релиз и развитие мобильного приложения KarosGuard в Google Play (48+ итераций).">
 <meta property="og:image" content="assets/karosguard-icon.png">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Tomas Shchegolev — Portfolio">
-<meta name="twitter:description" content="Креативный разработчик и дизайнер | 28 лет.">
+<meta name="twitter:title" content="Tomas Shchegolev — Product Manager">
+<meta name="twitter:description" content="Product Manager / Создатель продуктов. Релиз и развитие мобильного приложения KarosGuard в Google Play.">
 <meta name="twitter:image" content="assets/karosguard-icon.png">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <title>Tomas Shchegolev — Portfolio</title>
@@ -90,13 +90,18 @@
   .pulse-dot{width:8px;height:8px;border-radius:50%;background:#34d399;box-shadow:0 0 8px #34d399;animation:pulse 2s infinite}
   @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.8)}}
 
-  .cta-button{margin-top:32px;display:inline-block;padding:17px 48px;border-radius:999px;text-decoration:none;
-    background:linear-gradient(90deg,#f59e0b,#ec4899 55%,#8b5cf6);background-size:160% 100%;color:#fff;font-weight:700;font-size:18px;
-    border:1px solid rgba(255,255,255,.22);
-    box-shadow:0 0 0 4px rgba(255,255,255,.07),0 0 22px rgba(236,72,153,.42),0 0 40px rgba(139,92,246,.28);
-    transition:transform .18s ease-out,box-shadow .18s ease-out}
-  .cta-button:hover{transform:scale(1.04);box-shadow:0 0 0 6px rgba(255,255,255,.12),0 0 30px rgba(236,72,153,.65),0 0 50px rgba(139,92,246,.45)}
+  .hero-role{font-size:clamp(20px,3.2vw,28px);font-weight:800;background:linear-gradient(135deg,#7dd3fc,#c4b5fd,#f472b6);-webkit-background-clip:text;color:transparent;margin-top:14px;letter-spacing:-0.01em}
+  .hero-subtext{color:#cbd5e1;font-size:clamp(15.5px,2vw,18px);max-width:760px;margin-top:10px;line-height:1.6;font-weight:500}
+  .hero-cta-group{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:28px}
+
+  .cta-button{display:inline-flex;align-items:center;justify-content:center;padding:15px 40px;border-radius:999px;text-decoration:none;
+    background:linear-gradient(90deg,#f59e0b,#ec4899 55%,#8b5cf6);background-size:160% 100%;color:#fff;font-weight:700;font-size:16.5px;
+    border:1px solid rgba(255,255,255,.22);box-shadow:0 0 22px rgba(236,72,153,.42);
+    transition:transform .18s ease-out,box-shadow .18s ease-out;cursor:pointer}
+  .cta-button:hover{transform:scale(1.04);box-shadow:0 0 30px rgba(236,72,153,.65)}
   .cta-button:active{transform:scale(.96)}
+  .cta-button.secondary{background:rgba(15,23,62,.85);border:1px solid rgba(56,189,248,.5);color:#bae6fd;box-shadow:0 0 18px rgba(56,189,248,.2)}
+  .cta-button.secondary:hover{border-color:rgba(147,197,253,.9);color:#fff;box-shadow:0 0 26px rgba(56,189,248,.45)}
 
   .kicker{color:var(--orange);letter-spacing:.22em;font-size:12px;font-weight:700;text-transform:uppercase}
 
@@ -105,46 +110,65 @@
   .section-title-line{width:96px;height:3.5px;margin:0 auto 42px;border-radius:999px;
     background:linear-gradient(90deg,#38bdf8,#818cf8,#c084fc);box-shadow:0 0 16px rgba(129,140,248,.85)}
 
-  .about-intro{max-width:860px;margin:0 auto 46px;text-align:center;color:#e2e8f0;font-size:clamp(17px,2vw,20px);line-height:1.75;font-weight:500;text-shadow:0 2px 14px rgba(0,0,0,.6)}
-  .about-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-  .about-card{position:relative;background:#070b28f0;border:1px solid rgba(148,163,184,.28);border-radius:24px;padding:30px 28px;
+  .about-box{background:#070b28f0;border:1px solid rgba(56,189,248,.3);border-radius:28px;padding:36px 32px;
+    box-shadow:0 12px 36px rgba(0,0,0,.6);backdrop-filter:blur(16px);max-width:960px;margin:0 auto}
+  .about-box p{color:#f1f5f9;font-size:clamp(17px,2vw,19.5px);line-height:1.8;font-weight:500;margin:0}
+
+  .skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .skill-card{position:relative;background:#070b28f0;border:1px solid rgba(148,163,184,.28);border-radius:24px;padding:28px;
     box-shadow:0 12px 34px rgba(0,0,0,.55);backdrop-filter:blur(16px);transition:all .3s cubic-bezier(0.16,1,0.3,1);
     display:flex;flex-direction:column;justify-content:space-between}
-  .about-card:hover{transform:translateY(-8px);border-color:rgba(147,197,253,.6);box-shadow:0 24px 50px rgba(0,0,0,.75), 0 0 24px rgba(99,102,241,.25)}
-  .about-card-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}
-  .about-icon-box{width:50px;height:50px;border-radius:16px;display:grid;place-items:center;color:#fff;box-shadow:0 8px 20px rgba(0,0,0,.45)}
-  .about-icon-box.code{background:linear-gradient(135deg,#3b82f6,#4f46e5)}
-  .about-icon-box.design{background:linear-gradient(135deg,#a855f7,#db2777)}
-  .about-icon-box.video{background:linear-gradient(135deg,#f59e0b,#e11d48)}
-  .about-icon-box svg{width:26px;height:26px;stroke-width:2}
-  .about-tag{font-size:11.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#93c5fd;
+  .skill-card:hover{transform:translateY(-8px);border-color:rgba(56,189,248,.6);box-shadow:0 24px 50px rgba(0,0,0,.75),0 0 24px rgba(56,189,248,.25)}
+  .skill-card-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}
+  .skill-icon-box{width:48px;height:48px;border-radius:16px;display:grid;place-items:center;color:#fff;box-shadow:0 8px 20px rgba(0,0,0,.45)}
+  .skill-icon-box svg{width:24px;height:24px;stroke-width:2}
+  .skill-tag{font-size:11.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#93c5fd;
     background:rgba(15,23,62,.85);border:1px solid rgba(147,197,253,.35);padding:5px 12px;border-radius:999px;box-shadow:0 0 12px rgba(59,130,246,.2)}
-  .about-card h3{font-size:22px;color:#fff;font-weight:800;margin:0 0 12px;letter-spacing:-.015em}
-  .about-card p{color:var(--muted);font-size:15.5px;line-height:1.65;font-weight:400;margin:0}
+  .skill-card h3{font-size:21px;color:#fff;font-weight:800;margin:0 0 10px;letter-spacing:-.015em}
+  .skill-card p{color:var(--muted);font-size:15px;line-height:1.65;font-weight:400;margin:0}
 
-  #contact p{font-size:clamp(17px,2vw,20px);color:#e2e8f0;line-height:1.65;font-weight:500;margin:0 auto 36px;max-width:720px;text-align:center;text-shadow:0 2px 14px rgba(0,0,0,.6)}
+  /* Case Study */
+  .case-study-wrap{background:#070b28f0;border:1px solid rgba(56,189,248,.3);border-radius:32px;padding:42px 36px;
+    box-shadow:0 0 48px rgba(59,130,246,.18);backdrop-filter:blur(16px)}
+  .case-badge{display:inline-flex;align-items:center;gap:8px;padding:6px 16px;border-radius:999px;
+    border:1px solid rgba(249,115,22,.4);background:rgba(249,115,22,.15);color:#fdba74;font-size:12px;font-weight:800;
+    letter-spacing:.15em;text-transform:uppercase;margin-bottom:14px}
+  .case-problem-solution{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:28px}
+  .problem-card{background:rgba(127,29,29,.22);border:1px solid rgba(239,68,68,.35);border-radius:20px;padding:24px}
+  .problem-card h3{color:#fca5a5;font-size:19px;font-weight:800;margin-bottom:12px;display:flex;align-items:center;gap:10px}
+  .problem-card p{color:#f1f5f9;font-size:15px;line-height:1.65;margin:0}
+  .solution-card{background:rgba(6,78,59,.25);border:1px solid rgba(16,185,129,.35);border-radius:20px;padding:24px}
+  .solution-card h3{color:#6ee7b7;font-size:19px;font-weight:800;margin-bottom:12px;display:flex;align-items:center;gap:10px}
+  .solution-card ul{list-style:none;margin:0;padding:0}
+  .solution-card li{color:#f1f5f9;font-size:15px;line-height:1.6;margin-bottom:8px;position:relative;padding-left:18px}
+  .solution-card li::before{content:"•";color:#34d399;position:absolute;left:0;font-weight:bold;font-size:18px}
 
-  .hidden-subtitle{font-size:16px;color:var(--muted);line-height:1.7;font-weight:450;text-align:center;max-width:760px;margin:0 auto 32px;display:block}
+  .metrics-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:36px 0}
+  .metric-box{background:rgba(15,23,62,.7);border:1px solid rgba(56,189,248,.25);border-radius:20px;padding:20px 14px;text-align:center}
+  .metric-num{font-size:clamp(28px,3.4vw,38px);font-weight:800;background:linear-gradient(135deg,#7dd3fc,#c4b5fd);-webkit-background-clip:text;color:transparent}
+  .metric-label{color:#cbd5e1;font-size:13px;font-weight:600;margin-top:4px}
 
-  /* Projects Showcase */
-  .main-project-card{background:#070b28e6;border:1px solid rgba(96,165,250,.3);border-radius:28px;padding:36px;
-    box-shadow:0 0 36px rgba(59,130,246,.18);backdrop-filter:blur(12px);display:flex;justify-content:space-between;align-items:center;gap:36px}
-  .project-info{flex:1;max-width:440px}
-  .project-info h3{font-size:clamp(30px,3.8vw,40px);color:#fff;font-weight:800;margin:6px 0 10px}
-  .project-info p{color:var(--muted);font-size:15px;line-height:1.6}
-  .project-detail-btn{display:inline-flex;align-items:center;gap:8px;padding:12px 26px;border-radius:999px;
-    background:rgba(15,23,62,.7);border:1px solid rgba(96,165,250,.5);color:#fff;font-size:15px;font-weight:600;
-    text-decoration:none;box-shadow:0 0 16px rgba(59,130,246,.25);transition:all .2s ease-out;margin-top:24px;cursor:pointer}
-  .project-detail-btn:hover{transform:translateX(4px);background:rgba(30,41,89,.85);border-color:rgba(147,197,253,.9);box-shadow:0 0 24px rgba(59,130,246,.45)}
+  .decisions-wrap{margin-top:38px}
+  .decision-item{background:rgba(15,23,62,.6);border:1px solid rgba(148,163,184,.22);border-radius:20px;padding:22px 26px;margin-top:14px;transition:border-color .2s}
+  .decision-item:hover{border-color:rgba(148,163,184,.5)}
+  .decision-header{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+  .decision-header h4{font-size:18px;font-weight:800;color:#fff;margin:0}
+  .decision-tag{font-size:11.5px;font-weight:800;text-transform:uppercase;padding:4px 12px;border-radius:999px;border:1px solid}
+  .decision-item p{color:#cbd5e1;font-size:15px;line-height:1.65;margin:10px 0 0}
 
-  .mockup-showcase{display:flex;align-items:center;justify-content:center;gap:14px;flex:1;max-width:580px}
-  .mockup-phone{position:relative;flex:1;max-width:176px;border-radius:24px;overflow:hidden;
+  .project-detail-btn{display:inline-flex;align-items:center;gap:10px;padding:14px 32px;border-radius:999px;
+    background:rgba(15,23,62,.75);border:1px solid rgba(96,165,250,.55);color:#fff;font-size:16px;font-weight:700;
+    text-decoration:none;box-shadow:0 0 20px rgba(59,130,246,.25);transition:all .2s ease-out;cursor:pointer}
+  .project-detail-btn:hover{transform:translateY(-2px);background:rgba(30,41,89,.9);border-color:rgba(147,197,253,.9);box-shadow:0 0 28px rgba(59,130,246,.45)}
+
+  .mockup-showcase{display:flex;align-items:center;justify-content:center;gap:14px;max-width:620px;margin:40px auto 0}
+  .mockup-phone{position:relative;flex:1;max-width:180px;border-radius:24px;overflow:hidden;
     border:2.5px solid rgba(71,85,105,.85);background:#030712;box-shadow:0 16px 36px rgba(0,0,0,.75);
     transition:transform .3s ease-out, box-shadow .3s ease-out}
   .mockup-phone::before{content:"";position:absolute;top:6px;left:50%;transform:translateX(-50%);width:28px;height:4px;
     border-radius:99px;background:rgba(255,255,255,.25);z-index:10}
   .mockup-phone img{width:100%;height:auto;display:block;object-fit:cover}
-  .mockup-phone-center{max-width:202px;flex:1.16;border-color:rgba(52,211,153,.75);
+  .mockup-phone-center{max-width:210px;flex:1.18;border-color:rgba(52,211,153,.75);
     box-shadow:0 20px 48px rgba(16,185,129,.35),0 0 24px rgba(52,211,153,.25);transform:scale(1.06);z-index:2}
   .mockup-phone:hover{transform:translateY(-6px) scale(1.03);box-shadow:0 24px 44px rgba(0,0,0,.85),0 0 24px rgba(96,165,250,.4)}
   .mockup-phone-center:hover{transform:translateY(-8px) scale(1.08);box-shadow:0 26px 56px rgba(16,185,129,.45),0 0 30px rgba(52,211,153,.35)}
@@ -196,22 +220,19 @@
   .contact-button svg{width:21px;height:21px}
   .telegram{background:linear-gradient(90deg,#229ED9,#38bdf8);box-shadow:0 0 22px rgba(56,189,248,.4)}
   .email{background:linear-gradient(90deg,#f59e0b,#a855f7);box-shadow:0 0 22px rgba(168,85,247,.4)}
-  #contact p{text-align:center;color:var(--muted)}
 
   footer{padding:34px 20px;text-align:center;color:#94a3b8;border-top:1px solid rgba(148,163,184,.15);
     background:rgba(4,6,26,.6)}
 
   @keyframes metal{0%,100%{background-position:0 0}50%{background-position:0 100%}}
   @keyframes sheen{0%,100%{background-position:120% 0}50%{background-position:-20% 0}}
-  @keyframes borderShift{0%{background-position:0 0, 0% 50%}100%{background-position:0 0, 100% 50%}}
 
   @media(max-width:960px){
     nav{padding:12px 16px;gap:10px}
     .nav-links{gap:16px}
     .nav-links a{font-size:15px}
-    .about-grid,.subprojects-grid{grid-template-columns:1fr}
-    .main-project-card{flex-direction:column;text-align:center;padding:26px}
-    .project-info{max-width:100%}
+    .skills-grid,.subprojects-grid,.case-problem-solution{grid-template-columns:1fr}
+    .metrics-grid{grid-template-columns:repeat(2,1fr)}
     .mockup-showcase{max-width:100%;width:100%;gap:10px}
     .subproject-inner{flex-direction:column;text-align:center}
     header{backdrop-filter:none;background:rgba(4,6,26,.94)}
@@ -229,40 +250,17 @@
     .contact-links{flex-direction:column;align-items:stretch;max-width:300px;margin:28px auto 0}
     .contact-button{justify-content:center}
   }
-  @media (prefers-reduced-motion:reduce){
-    html{scroll-behavior:auto}
-    .hero-name,.starfield span{animation:none}
-    .cta-button,.logo,.contact-button,.spoiler .chev{transition:none}
-  }
 </style>
 </head>
 <body>
 <div class="cosmos" aria-hidden="true"></div>
 <div class="vignette" aria-hidden="true"></div>
 <div class="starfield" aria-hidden="true">
-  <span style="left:11%;top:7%;width:2.2px;height:2.2px;background:rgb(255 255 255 / .8)"></span>
-  <span style="left:48%;top:60%;width:1.2px;height:1.2px;background:rgb(255 170 80 / .7);animation-delay:.45s"></span>
-  <span style="left:85%;top:13%;width:1.2px;height:1.2px;background:rgb(140 160 255 / .75);animation-delay:.9s"></span>
-  <span style="left:22%;top:66%;width:1.2px;height:1.2px;background:rgb(220 120 255 / .55);animation-delay:1.35s"></span>
-  <span style="left:59%;top:19%;width:2.2px;height:2.2px;background:rgb(255 255 255 / .8);animation-delay:1.8s"></span>
-  <span style="left:96%;top:72%;width:1.2px;height:1.2px;background:rgb(255 170 80 / .7);animation-delay:2.25s"></span>
-  <span style="left:33%;top:25%;width:1.2px;height:1.2px;background:rgb(140 160 255 / .75);animation-delay:2.7s"></span>
-  <span style="left:70%;top:78%;width:1.2px;height:1.2px;background:rgb(220 120 255 / .55);animation-delay:3.15s"></span>
-  <span style="left:7%;top:31%;width:2.2px;height:2.2px;background:rgb(255 255 255 / .8);animation-delay:.2s"></span>
-  <span style="left:44%;top:84%;width:1.2px;height:1.2px;background:rgb(255 170 80 / .7);animation-delay:.65s"></span>
-  <span style="left:81%;top:37%;width:1.2px;height:1.2px;background:rgb(140 160 255 / .75);animation-delay:1.1s"></span>
-  <span style="left:18%;top:90%;width:1.2px;height:1.2px;background:rgb(220 120 255 / .55);animation-delay:1.55s"></span>
-  <span style="left:55%;top:43%;width:2.2px;height:2.2px;background:rgb(255 255 255 / .8);animation-delay:2s"></span>
-  <span style="left:92%;top:96%;width:1.2px;height:1.2px;background:rgb(255 170 80 / .7);animation-delay:2.45s"></span>
-  <span style="left:29%;top:49%;width:1.2px;height:1.2px;background:rgb(140 160 255 / .75);animation-delay:2.9s"></span>
-  <span style="left:66%;top:2%;width:1.2px;height:1.2px;background:rgb(220 120 255 / .55);animation-delay:.3s"></span>
-  <span style="left:3%;top:55%;width:2.2px;height:2.2px;background:rgb(255 255 255 / .8);animation-delay:.75s"></span>
-  <span style="left:40%;top:8%;width:1.2px;height:1.2px;background:rgb(255 170 80 / .7);animation-delay:1.2s"></span>
-  <span style="left:77%;top:61%;width:1.2px;height:1.2px;background:rgb(140 160 255 / .75);animation-delay:1.65s"></span>
-  <span style="left:14%;top:14%;width:1.2px;height:1.2px;background:rgb(220 120 255 / .55);animation-delay:2.1s"></span>
-  <span style="left:51%;top:67%;width:2.2px;height:2.2px;background:rgb(255 255 255 / .8);animation-delay:2.55s"></span>
-  <span style="left:88%;top:20%;width:1.2px;height:1.2px;background:rgb(255 170 80 / .7);animation-delay:3s"></span>
-  <span style="left:25%;top:73%;width:1.2px;height:1.2px;background:rgb(140 160 255 / .75);animation-delay:.4s"></span>
+  <span style="left:12%;top:18%;width:2px;height:2px;background:rgb(255 255 255 / .9);animation-delay:0s"></span>
+  <span style="left:82%;top:12%;width:1.5px;height:1.5px;background:rgb(140 180 255 / .8);animation-delay:1.2s"></span>
+  <span style="left:24%;top:68%;width:2.5px;height:2.5px;background:rgb(255 210 140 / .85);animation-delay:2.1s"></span>
+  <span style="left:74%;top:74%;width:1.8px;height:1.8px;background:rgb(180 220 255 / .75);animation-delay:.6s"></span>
+  <span style="left:48%;top:88%;width:1.5px;height:1.5px;background:rgb(255 255 255 / .7);animation-delay:1.8s"></span>
   <span style="left:62%;top:26%;width:1.2px;height:1.2px;background:rgb(220 120 255 / .55);animation-delay:.85s"></span>
   <span style="left:99%;top:79%;width:2.2px;height:2.2px;background:rgb(255 255 255 / .8);animation-delay:1.3s"></span>
   <span style="left:36%;top:32%;width:1.2px;height:1.2px;background:rgb(255 170 80 / .7);animation-delay:1.75s"></span>
@@ -286,7 +284,9 @@
     </a>
     <ul class="nav-links">
       <li><a href="#about" data-en="About" data-ru="О себе">О себе</a></li>
-      <li><a href="#portfolio" data-en="Projects" data-ru="Проекты">Проекты</a></li>
+      <li><a href="#skills" data-en="Skills" data-ru="Навыки">Навыки</a></li>
+      <li><a href="#case" data-en="Featured Case" data-ru="Главный кейс">Главный кейс</a></li>
+      <li><a href="#projects" data-en="Projects" data-ru="Проекты">Проекты</a></li>
       <li><a href="#contact" data-en="Contact" data-ru="Контакты">Контакты</a></li>
     </ul>
     <button class="lang-switcher" id="langToggle" aria-label="Toggle language">
@@ -298,6 +298,7 @@
 </header>
 
 <main>
+  <!-- Hero -->
   <section id="hero">
     <div class="hero-avatar">
       <img src="assets/avatar-poster.jpg" alt="Tomas Shchegolev">
@@ -306,94 +307,232 @@
       </video>
     </div>
     <h1 class="hero-name">Tomas Shchegolev</h1>
-    <p class="subtitle" data-en="Creative Developer & Designer | Crypto Experience & Image Morphing" data-ru="Креативный программист и дизайнер | Опыт в крипте и Image Morphing">Креативный программист и дизайнер | Опыт в крипте и Image Morphing</p>
+    <div class="hero-role" data-en="Product Manager / Product Creator" data-ru="Product Manager / Создатель продуктов">Product Manager / Создатель продуктов</div>
+    <p class="hero-subtext" data-en="Built and published a mobile app on Google Play: from zero to 48 release iterations · Seeking a Junior Product Manager / Associate PM / Internship position" data-ru="Создал и опубликовал мобильное приложение в Google Play: от идеи до 48 итераций · Ищу позицию Junior Product Manager / помощника продакта / стажировку">Создал и опубликовал мобильное приложение в Google Play: от идеи до 48 итераций · Ищу позицию Junior Product Manager / помощника продакта / стажировку</p>
     <div class="hero-badge">
       <span class="pulse-dot"></span>
       <span data-en="28 y.o. — Bishkek" data-ru="28 лет — г. Бишкек">28 лет — г. Бишкек</span>
     </div>
-    <a href="#portfolio" class="cta-button" data-en="View My Work" data-ru="Посмотреть работы">Посмотреть работы</a>
+    <div class="hero-cta-group">
+      <a href="#case" class="cta-button" data-en="Explore Featured Case" data-ru="Смотреть главный кейс">Смотреть главный кейс</a>
+      <a href="#contact" class="cta-button secondary" data-en="Get in Touch" data-ru="Связаться со мной">Связаться со мной</a>
+    </div>
   </section>
 
+  <!-- About Me Manifesto -->
   <section id="about">
     <div class="container">
       <h2 class="section-title" data-en="About Me" data-ru="О себе">О себе</h2>
       <div class="section-title-line"></div>
-      <p class="about-intro" data-en="I'm Tomas — creative developer and designer with experience in crypto and Image Morphing. I create mobile applications, digital tools and visual projects." data-ru="Я Томас — креативный программист и дизайнер с опытом в крипте и Image Morphing. Создаю мобильные приложения, цифровые инструменты и творческие визуальные проекты.">Я Томас — креативный программист и дизайнер с опытом в крипте и Image Morphing. Создаю мобильные приложения, цифровые инструменты и творческие визуальные проекты.</p>
-      <div class="about-grid">
-        <div class="about-card">
-          <div class="about-card-top">
-            <div class="about-icon-box code">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></svg>
+      <div class="about-box">
+        <p data-en="I'm Tomas — I build products from concept to launch. Developed and launched KarosGuard, a digital security app on Google Play. Took ownership of the entire lifecycle: vision, features, UX, store compliance, releases, and user feedback. I leverage AI tools to rapidly turn ideas into working products in weeks rather than months." data-ru="Я Томас — создаю продукты от идеи до публикации. Разработал и запустил KarosGuard — приложение для цифровой безопасности в Google Play. Сам отвечал за всё: концепция, фичи, UX, соответствие правилам платформы, релизы, работа с отзывами. Использую AI-инструменты для быстрой реализации идей — от концепта до работающего продукта за недели, а не месяцы.">Я Томас — создаю продукты от идеи до публикации. Разработал и запустил KarosGuard — приложение для цифровой безопасности в Google Play. Сам отвечал за всё: концепция, фичи, UX, соответствие правилам платформы, релизы, работа с отзывами. Использую AI-инструменты для быстрой реализации идей — от концепта до работающего продукта за недели, а не месяцы.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills & Competencies -->
+  <section id="skills">
+    <div class="container" style="max-width:1160px">
+      <h2 class="section-title" data-en="Skills & Core Competencies" data-ru="Навыки и компетенции">Навыки и компетенции</h2>
+      <div class="section-title-line"></div>
+      <p style="text-align:center;color:var(--muted);max-width:760px;margin:0 auto 42px;font-size:16.5px" data-en="Core product management, technical delivery, and visual competencies." data-ru="Ключевые продуктовые, технические и визуальные компетенции полного цикла.">Ключевые продуктовые, технические и визуальные компетенции полного цикла.</p>
+      
+      <div class="skills-grid">
+        <!-- 1. Product Management -->
+        <div class="skill-card">
+          <div class="skill-card-top">
+            <div class="skill-icon-box" style="background:linear-gradient(135deg,#3b82f6,#4f46e5)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
             </div>
-            <span class="about-tag">Mobile & Web</span>
+            <span class="skill-tag" data-en="Strategy & Roadmap" data-ru="Strategy & Roadmap">Strategy & Roadmap</span>
           </div>
-          <h3 data-en="Development & Crypto" data-ru="Программирование и крипта">Программирование и крипта</h3>
-          <p data-en="Mobile applications, smart contracts and tools for crypto and web projects." data-ru="Мобильные приложения, смарт-контракты и цифровые инструменты для крипто- и веб-проектов.">Мобильные приложения, смарт-контракты и цифровые инструменты для крипто- и веб-проектов.</p>
+          <h3 data-en="Product Management" data-ru="Product Management">Product Management</h3>
+          <p data-en="Product vision, feature prioritization, roadmaps, hypothesis testing, and user feedback iterations." data-ru="Концепция продукта, приоритизация фич, roadmap, тестирование гипотез и итерации по фидбеку пользователей.">Концепция продукта, приоритизация фич, roadmap, тестирование гипотез и итерации по фидбеку пользователей.</p>
         </div>
-        <div class="about-card">
-          <div class="about-card-top">
-            <div class="about-icon-box design">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="13.5" cy="6.5" r="2.5"/><circle cx="6" cy="12" r="2"/><circle cx="17" cy="16" r="2"/><path d="M9 12h4.5M13.5 9v4"/></svg>
+
+        <!-- 2. Mobile Publishing -->
+        <div class="skill-card">
+          <div class="skill-card-top">
+            <div class="skill-icon-box" style="background:linear-gradient(135deg,#10b981,#0d9488)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
             </div>
-            <span class="about-tag">UI / UX</span>
+            <span class="skill-tag" data-en="Google Play" data-ru="Google Play">Google Play</span>
           </div>
-          <h3 data-en="Design" data-ru="Дизайн">Дизайн</h3>
-          <p data-en="Interfaces, visual concepts, composition and atmosphere with attention to details." data-ru="Интерфейсы, визуальные концепции, композиция и атмосфера с вниманием к деталям.">Интерфейсы, визуальные концепции, композиция и атмосфера с вниманием к деталям.</p>
+          <h3 data-en="Mobile Publishing" data-ru="Mobile Publishing">Mobile Publishing</h3>
+          <p data-en="Google Play Console, release cycles (48+ builds), policy compliance, store moderation, and ASO." data-ru="Google Play Console, релизные циклы (48+ версий), модерация, соблюдение политик платформы и ASO.">Google Play Console, релизные циклы (48+ версий), модерация, соблюдение политик платформы и ASO.</p>
         </div>
-        <div class="about-card">
-          <div class="about-card-top">
-            <div class="about-icon-box video">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M10 9l5 3-5 3z"/></svg>
+
+        <!-- 3. UX & UI -->
+        <div class="skill-card">
+          <div class="skill-card-top">
+            <div class="skill-icon-box" style="background:linear-gradient(135deg,#a855f7,#db2777)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7z"/></svg>
             </div>
-            <span class="about-tag">VFX & Motion</span>
+            <span class="skill-tag" data-en="Design & UX" data-ru="Design & UX">Design & UX</span>
           </div>
-          <h3 data-en="Video Editing & Morphing" data-ru="Монтаж и Image Morphing">Монтаж и Image Morphing</h3>
-          <p data-en="Image morphing from frame A to frame B, video editing, transitions and visual effects for videos." data-ru="Морфинг изображений из кадра А в кадр Б, видеомонтаж, переходы и визуальные спецэффекты для роликов.">Морфинг изображений из кадра А в кадр Б, видеомонтаж, переходы и визуальные спецэффекты для роликов.</p>
+          <h3 data-en="UX & Interface Design" data-ru="UX и интерфейсы">UX и интерфейсы</h3>
+          <p data-en="User journeys (CJM), screen prototyping, Figma, responsive design systems, and usability." data-ru="Проектирование пользовательских сценариев (CJM), прототипирование экранов, Figma и дизайн-системы.">Проектирование пользовательских сценариев (CJM), прототипирование экранов, Figma и дизайн-системы.</p>
+        </div>
+
+        <!-- 4. Analytics & QA -->
+        <div class="skill-card">
+          <div class="skill-card-top">
+            <div class="skill-icon-box" style="background:linear-gradient(135deg,#06b6d4,#2563eb)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+            </div>
+            <span class="skill-tag" data-en="Metrics & QA" data-ru="Metrics & QA">Metrics & QA</span>
+          </div>
+          <h3 data-en="Analytics & Quality" data-ru="Аналитика и качество">Аналитика и качество</h3>
+          <p data-en="Firebase Crashlytics, release stability monitoring, user review triage, and bug resolution." data-ru="Firebase Crashlytics, мониторинг стабильности релизов, работа с отзывами и устранение критических багов.">Firebase Crashlytics, мониторинг стабильности релизов, работа с отзывами и устранение критических багов.</p>
+        </div>
+
+        <!-- 5. AI-Assisted Dev -->
+        <div class="skill-card">
+          <div class="skill-card-top">
+            <div class="skill-icon-box" style="background:linear-gradient(135deg,#f59e0b,#ea580c)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="5" r="2"/><path d="M12 7v4M8 15h.01M16 15h.01"/></svg>
+            </div>
+            <span class="skill-tag" data-en="Speed & MVP" data-ru="Speed & MVP">Speed & MVP</span>
+          </div>
+          <h3 data-en="AI-Assisted Development" data-ru="AI-Assisted Development">AI-Assisted Development</h3>
+          <p data-en="Rapid MVP prototyping and production builds leveraging modern AI-assisted workflows." data-ru="Сверхбыстрое прототипирование и реализация работающих продуктов с помощью передовых ИИ-инструментов.">Сверхбыстрое прототипирование и реализация работающих продуктов с помощью передовых ИИ-инструментов.</p>
+        </div>
+
+        <!-- 6. Visual Content & Motion -->
+        <div class="skill-card">
+          <div class="skill-card-top">
+            <div class="skill-icon-box" style="background:linear-gradient(135deg,#f43f5e,#9333ea)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"/><line x1="7" y1="2" x2="7" y2="22"/><line x1="17" y1="2" x2="17" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/><line x1="2" y1="7" x2="7" y2="7"/><line x1="2" y1="17" x2="7" y2="17"/><line x1="17" y1="17" x2="22" y2="17"/><line x1="17" y1="7" x2="22" y2="7"/></svg>
+            </div>
+            <span class="skill-tag" data-en="Motion & Media" data-ru="Motion & Media">Motion & Media</span>
+          </div>
+          <h3 data-en="Visual Content & Motion" data-ru="Визуальный контент и Motion">Визуальный контент и Motion</h3>
+          <p data-en="Promotional videos, motion graphics, video editing, and visual special effects for product launches." data-ru="Создание промо-видео, motion-дизайн, видеомонтаж и спецэффекты для продуктовых презентаций.">Создание промо-видео, motion-дизайн, видеомонтаж и спецэффекты для продуктовых презентаций.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="portfolio">
+  <!-- Featured Case: KarosGuard Deep Product Study -->
+  <section id="case">
     <div class="container" style="max-width:1160px">
-      <h2 class="section-title" data-en="Projects" data-ru="Проекты">Проекты</h2>
-      <div class="section-title-line"></div>
+      <div style="text-align:center">
+        <div class="case-badge" data-en="FEATURED CASE STUDY · MOBILE PRODUCT" data-ru="ГЛАВНЫЙ КЕЙС · PRODUCT STUDY">ГЛАВНЫЙ КЕЙС · PRODUCT STUDY</div>
+        <h2 class="section-title" style="margin-bottom:8px" data-en="KarosGuard — Digital Safety Mobile App" data-ru="KarosGuard — Приложение цифровой безопасности">KarosGuard — Приложение цифровой безопасности</h2>
+        <p style="color:#bae6fd;font-size:16.5px;max-width:760px;margin:0 auto" data-en="18+ content blocking, screen time management, and protection logging on Android." data-ru="Блокировка нежелательного контента 18+, контроль экранного времени и дневник защиты на Android.">Блокировка нежелательного контента 18+, контроль экранного времени и дневник защиты на Android.</p>
+      </div>
 
-      <!-- Главный проект KarosGuard -->
-      <article id="karosguard" class="main-project-card">
-        <div class="project-info">
-          <img src="assets/karosguard-icon.png" alt="KarosGuard" style="width:88px;height:88px;border-radius:22px;box-shadow:0 8px 24px rgba(249,115,22,.45)">
-          <div class="kicker" style="margin-top:14px" data-en="FEATURED PROJECT" data-ru="ГЛАВНЫЙ ПРОЕКТ">ГЛАВНЫЙ ПРОЕКТ</div>
-          <h3>KarosGuard</h3>
-          <p data-en="Mobile application for 18+ content blocking and digital productivity." data-ru="Мобильное приложение для защиты от 18+ контента и продуктивности.">Мобильное приложение для защиты от 18+ контента и продуктивности.</p>
+      <article class="case-study-wrap" style="margin-top:38px">
+        <!-- Problem & Solution Grid -->
+        <div class="case-problem-solution">
+          <div class="problem-card">
+            <h3 data-en="The Problem" data-ru="Проблема">
+              <svg viewBox="0 0 24 24" style="width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+              <span>Проблема</span>
+            </h3>
+            <p data-en="Uncontrolled access to 18+ content, screen addiction, and attention fragmentation caused by endless app scrolling." data-ru="Бесконтрольный доступ к взрослому (18+) контенту, цифровая зависимость и потеря фокуса из-за бесконечного скроллинга приложений.">Бесконтрольный доступ к взрослому (18+) контенту, цифровая зависимость и потеря фокуса из-за бесконечного скроллинга приложений.</p>
+          </div>
+
+          <div class="solution-card">
+            <h3 data-en="The Solution" data-ru="Решение">
+              <svg viewBox="0 0 24 24" style="width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              <span>Решение</span>
+            </h3>
+            <ul>
+              <li data-en="Smart domain-level blocking and on-device traffic safety." data-ru="Интеллектуальная блокировка нежелательных доменов и защита на уровне устройства.">Интеллектуальная блокировка нежелательных доменов и защита на уровне устройства.</li>
+              <li data-en="Customizable daily screen time limits for addictive apps." data-ru="Гибкие лимиты экранного времени для отвлекающих приложений.">Гибкие лимиты экранного времени для отвлекающих приложений.</li>
+              <li data-en="PIN-protected habit diary preventing impulsive limit bypasses." data-ru="Защищенный дневник привычек и пин-код для предотвращения импульсивного снятия ограничений.">Защищенный дневник привычек и пин-код для предотвращения импульсивного снятия ограничений.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Metrics Grid -->
+        <div style="margin-top:32px">
+          <div style="text-align:center;font-size:12px;font-weight:800;letter-spacing:.15em;color:#94a3b8;text-transform:uppercase" data-en="PRODUCT METRICS" data-ru="КЛЮЧЕВЫЕ ЦИФРЫ ПРОДУКТА">КЛЮЧЕВЫЕ ЦИФРЫ ПРОДУКТА</div>
+          <div class="metrics-grid">
+            <div class="metric-box">
+              <div class="metric-num">48+</div>
+              <div class="metric-label" data-en="Release Iterations" data-ru="Релизных итераций">Релизных итераций</div>
+            </div>
+            <div class="metric-box">
+              <div class="metric-num">100%</div>
+              <div class="metric-label" data-en="Google Play Compliance" data-ru="Прохождение модерации GP">Прохождение модерации GP</div>
+            </div>
+            <div class="metric-box">
+              <div class="metric-num">0</div>
+              <div class="metric-label" data-en="Critical Crashes in Prod" data-ru="Критических крашей в проде">Критических крашей в проде</div>
+            </div>
+            <div class="metric-box">
+              <div class="metric-num">2</div>
+              <div class="metric-label" data-en="Locales (RU & EN)" data-ru="Языка локализации (RU/EN)">Языка локализации (RU/EN)</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Key Product Decisions -->
+        <div class="decisions-wrap">
+          <h3 style="font-size:22px;font-weight:800;color:#fff;margin-bottom:18px" data-en="Key Product Decisions" data-ru="Ключевые продуктовые решения">Ключевые продуктовые решения</h3>
+          
+          <div class="decision-item">
+            <div class="decision-header">
+              <h4 data-en="Google Play Developer Account Protection" data-ru="Предотвращение блокировки аккаунта Google Play">Предотвращение блокировки аккаунта Google Play</h4>
+              <span class="decision-tag" style="border-color:rgba(251,191,36,.5);background:rgba(251,191,36,.15);color:#fde047" data-en="Compliance & Risk" data-ru="Комплаенс и Риски">Комплаенс и Риски</span>
+            </div>
+            <p data-en="Identified a potential conflict between a planned feature and updated Google Play policies → quickly re-architected and stripped risky code from the release build, preserving account health and app approval." data-ru="Обнаружил скрытый конфликт планируемой фичи с новыми политиками Google Play → оперативно переработал архитектуру и вырезал рискованный функционал из релизной ветки, сохранив чистый статус аккаунта разработчика.">Обнаружил скрытый конфликт планируемой фичи с новыми политиками Google Play → оперативно переработал архитектуру и вырезал рискованный функционал из релизной ветки, сохранив чистый статус аккаунта разработчика.</p>
+          </div>
+
+          <div class="decision-item">
+            <div class="decision-header">
+              <h4 data-en="3-Tier Usage Scenario Split" data-ru="Разделение на 3 сценария использования">Разделение на 3 сценария использования</h4>
+              <span class="decision-tag" style="border-color:rgba(96,165,250,.5);background:rgba(96,165,250,.15);color:#93c5fd" data-en="UX Segmentation" data-ru="Сегментация UX">Сегментация UX</span>
+            </div>
+            <p data-en="Segmented the app into three distinct operational modes based on user needs: soft habit control, strict parental guard, and unbreakable focus mode." data-ru="Разделил продукт на три режима строгости под разные профили пользователей: мягкий контроль привычек, строгая родительская защита и максимальный фокус без возможности обхода.">Разделил продукт на три режима строгости под разные профили пользователей: мягкий контроль привычек, строгая родительская защита и максимальный фокус без возможности обхода.</p>
+          </div>
+
+          <div class="decision-item">
+            <div class="decision-header">
+              <h4 data-en="Zero-Data Privacy Commitment" data-ru="Отказ от трекинга ради доверия">Отказ от трекинга ради доверия</h4>
+              <span class="decision-tag" style="border-color:rgba(52,211,153,.5);background:rgba(52,211,153,.15);color:#6ee7b7" data-en="Privacy & User Trust" data-ru="Приватность и Доверие">Приватность и Доверие</span>
+            </div>
+            <p data-en="Chose not to embed intrusive third-party analytics trackers — all content filtering executes strictly on-device, establishing strong user trust in a sensitive product niche." data-ru="Принял принципиальное решение отказаться от сторонних трекеров и сбора персональных данных — вся фильтрация происходит локально на устройстве, что стало ключевым фактором доверия аудитории.">Принял принципиальное решение отказаться от сторонних трекеров и сбора персональных данных — вся фильтрация происходит локально на устройстве, что стало ключевым фактором доверия аудитории.</p>
+          </div>
+        </div>
+
+        <!-- 3 Mockup Showcase -->
+        <div class="mockup-showcase">
+          <div class="mockup-phone">
+            <img src="assets/kg-limits.jpg" alt="Лимиты приложений" width="640" height="1280">
+          </div>
+          <div class="mockup-phone mockup-phone-center">
+            <img src="assets/kg-protected-main.jpg" alt="Вы под защитой" width="640" height="1280">
+          </div>
+          <div class="mockup-phone">
+            <img src="assets/kg-diary.jpg" alt="Дневник защиты" width="640" height="1280">
+          </div>
+        </div>
+
+        <!-- Google Play Button -->
+        <div style="text-align:center;margin-top:36px">
           <a href="https://play.google.com/store/apps/details?id=com.karosguard.app" class="project-detail-btn" target="_blank" rel="noopener noreferrer">
-            <svg viewBox="0 0 24 24" style="width:20px;height:20px;flex-shrink:0" aria-hidden="true">
+            <svg viewBox="0 0 24 24" style="width:22px;height:22px;flex-shrink:0" aria-hidden="true">
               <path fill="#4285F4" d="M3.6 1.8c-.3.3-.5.8-.5 1.4v17.6c0 .6.2 1.1.5 1.4l.1.1 9.9-9.9v-.2L3.6 1.8z" />
               <path fill="#FBBC04" d="M16.9 15.5l-3.3-3.3v-.4l3.3-3.3.1.1 3.9 2.2c1.1.6 1.1 1.6 0 2.2l-3.9 2.2-.1.1z" />
               <path fill="#EA4335" d="M13.6 12.2L3.6 22.2c.4.4 1 .4 1.7 0l11.7-6.7-3.4-3.3z" />
               <path fill="#34A853" d="M13.6 11.8l3.4-3.3L5.3 1.8c-.7-.4-1.3-.4-1.7 0l10 10z" />
             </svg>
-            <span data-en="Project details →" data-ru="Подробнее о проекте →">Подробнее о проекте →</span>
+            <span data-en="View on Google Play →" data-ru="Смотреть в Google Play →">Смотреть в Google Play →</span>
           </a>
         </div>
-
-        <div class="mockup-showcase">
-          <!-- Левый телефон: kg-limits.jpg ("Лимиты") -->
-          <div class="mockup-phone">
-            <img src="assets/kg-limits.jpg" alt="Лимиты приложений" width="640" height="1280">
-          </div>
-          <!-- Центральный телефон: kg-protected-main.jpg ("Вы под защитой") -->
-          <div class="mockup-phone mockup-phone-center">
-            <img src="assets/kg-protected-main.jpg" alt="Вы под защитой" width="640" height="1280">
-          </div>
-          <!-- Правый телефон: kg-diary.jpg ("Дневник защиты") -->
-          <div class="mockup-phone">
-            <img src="assets/kg-diary.jpg" alt="Дневник защиты" width="640" height="1280">
-          </div>
-        </div>
       </article>
+    </div>
+  </section>
 
-      <!-- Нижний ряд: 2 карточки -->
+  <!-- Media & Bonus Projects -->
+  <section id="projects">
+    <div class="container" style="max-width:1160px">
+      <h2 class="section-title" data-en="Media & Bonus Projects" data-ru="Медиа и бонусные проекты">Медиа и бонусные проекты</h2>
+      <div class="section-title-line"></div>
+
       <div class="subprojects-grid">
         <!-- Карточка 1: YouTube Shorts -->
         <article class="subproject-card">
@@ -401,7 +540,7 @@
             <div style="flex:1">
               <h3 data-en="YouTube Shorts" data-ru="YouTube Shorts">YouTube Shorts</h3>
               <p data-en="Creating short-form videos for YouTube Shorts." data-ru="Создание коротких видео для YouTube Shorts.">Создание коротких видео для YouTube Shorts.</p>
-              <button type="button" class="project-detail-btn" id="shortsToggleBtn" onclick="playShort('ezRZMZL00-Y')">
+              <button type="button" class="project-detail-btn" id="shortsToggleBtn" onclick="playShort('ezRZMZL00-Y')" style="margin-top:18px">
                 <svg viewBox="0 0 24 24" style="width:20px;height:20px;flex-shrink:0;fill:#FF0000" aria-hidden="true">
                   <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
                 </svg>
@@ -409,17 +548,14 @@
               </button>
             </div>
             <div class="shorts-previews">
-              <!-- Video 1 -->
               <div class="shorts-thumb" onclick="playShort('ezRZMZL00-Y')" title="YouTube Shorts 1">
                 <img src="https://i.ytimg.com/vi/ezRZMZL00-Y/hqdefault.jpg" alt="YouTube Shorts 1">
                 <div class="play-mini"><span style="background:#dc2626"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></div>
               </div>
-              <!-- Video 2 -->
               <div class="shorts-thumb" onclick="playShort('9LOF4bvmu4s')" title="YouTube Shorts 2">
                 <img src="https://i.ytimg.com/vi/9LOF4bvmu4s/hqdefault.jpg" alt="YouTube Shorts 2">
                 <div class="play-mini"><span style="background:#dc2626"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></div>
               </div>
-              <!-- Video 3 -->
               <div class="shorts-thumb" onclick="playShort('4Unh4GmdR-8')" title="YouTube Shorts 3">
                 <img src="https://i.ytimg.com/vi/4Unh4GmdR-8/hqdefault.jpg" alt="YouTube Shorts 3">
                 <div class="play-mini"><span style="background:#dc2626"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></div>
@@ -436,8 +572,8 @@
           <div class="subproject-inner">
             <div style="flex:1">
               <h3 data-en="Image Morphing" data-ru="Image Morphing">Image Morphing</h3>
-              <p data-en="Image morphing from frame A to frame B with realistic visual special effects." data-ru="Морфинг изображений из кадра А в кадр Б с реалистичными спецэффектами.">Морфинг изображений из кадра А в кадр Б с реалистичными спецэффектами.</p>
-              <button type="button" class="project-detail-btn" id="morphToggleBtn" onclick="toggleMorphPlayer()">
+              <p data-en="Image morphing from frame A to frame B with visual special effects." data-ru="Морфинг изображений из кадра А в кадр Б с реалистичными спецэффектами.">Морфинг изображений из кадра А в кадр Б с реалистичными спецэффектами.</p>
+              <button type="button" class="project-detail-btn" id="morphToggleBtn" onclick="toggleMorphPlayer()" style="margin-top:18px">
                 <svg viewBox="0 0 24 24" style="width:20px;height:20px;flex-shrink:0;color:#67e8f9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                   <path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3L12 3z"/>
                   <path d="M19 3v4"/>
@@ -461,11 +597,12 @@
     </div>
   </section>
 
+  <!-- Contact -->
   <section id="contact">
     <div class="container">
       <h2 class="section-title" data-en="Contact" data-ru="Контакты">Контакты</h2>
       <div class="section-title-line"></div>
-      <p data-en="Interested in collaborating or discussing a project? Reach out!" data-ru="Если хочешь обсудить проект или сотрудничество — напиши мне.">Если хочешь обсудить проект или сотрудничество — напиши мне.</p>
+      <p style="text-align:center;color:#e2e8f0;font-size:18px;max-width:720px;margin:0 auto;line-height:1.65" data-en="Open to Junior Product Manager, Associate PM, or internship opportunities. Let's connect!" data-ru="Открыт к предложениям на позицию Junior Product Manager / помощника продакта / стажировку. Давайте обсудим!">Открыт к предложениям на позицию Junior Product Manager / помощника продакта / стажировку. Давайте обсудим!</p>
       <div class="contact-links">
         <a href="https://t.me/karos1" class="contact-button telegram" target="_blank" rel="noopener noreferrer">
           <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.5 3.5 18.1 20c-.25 1.17-.9 1.45-1.83.9l-5.05-3.72-2.44 2.35c-.27.27-.5.5-1.03.5l.37-5.16 9.4-8.5c.41-.37-.09-.58-.64-.2L5.26 13.2.28 11.64c-1.08-.34-1.1-1.08.23-1.6L19.95 2.5c.9-.34 1.68.2 1.55 1Z"/></svg>
@@ -479,9 +616,10 @@
     </div>
   </section>
 
+  <!-- Hidden Work & Concept Drafts -->
   <section id="hidden">
     <div class="container" style="max-width:820px">
-      <h2 class="section-title" data-en="Hidden Work" data-ru="Скрытые разработки">Скрытые разработки</h2>
+      <h2 class="section-title" data-en="Hidden Work & Concept Drafts" data-ru="Скрытые разработки и черновики">Скрытые разработки и черновики</h2>
       <div class="section-title-line"></div>
       <p class="hidden-subtitle" data-en="Drafts, interface concepts and work-in-progress screens. I have many active projects, but most are currently in private development." data-ru="Черновики, концепты интерфейсов и рабочие экраны. Проектов в работе достаточно много, но многие из них пока находятся в приватной разработке.">Черновики, концепты интерфейсов и рабочие экраны. Проектов в работе достаточно много, но многие из них пока находятся в приватной разработке.</p>
 
