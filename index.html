@@ -78,8 +78,11 @@
     -webkit-mask-image:linear-gradient(#000,#000);mask-image:linear-gradient(#000,#000);
     animation:sheen 7.5s ease-in-out infinite}
   .subtitle{color:var(--blue);font-size:clamp(17px,2.2vw,22px);font-weight:600;margin-top:16px}
-  .hero-line{color:#eef2ff;margin-top:12px;font-size:16px;max-width:700px}
-  .hero-morph-pill{color:var(--orange);font-weight:600;text-shadow:0 0 12px rgba(251,191,36,.5)}
+  .hero-badge{margin-top:14px;display:inline-flex;align-items:center;gap:8px;padding:8px 18px;border-radius:999px;
+    border:1px solid rgba(56,189,248,.35);background:rgba(8,20,55,.65);color:#bae6fd;font-weight:600;font-size:15px;
+    backdrop-filter:blur(8px);box-shadow:0 0 20px rgba(56,189,248,.25)}
+  .pulse-dot{width:8px;height:8px;border-radius:50%;background:#34d399;box-shadow:0 0 8px #34d399;animation:pulse 2s infinite}
+  @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.8)}}
   .cta-button{margin-top:32px;display:inline-block;padding:17px 48px;border-radius:999px;text-decoration:none;
     background:linear-gradient(90deg,#f59e0b,#ec4899 55%,#8b5cf6);background-size:160% 100%;color:#fff;font-weight:700;font-size:18px;
     border:1px solid rgba(255,255,255,.22);
@@ -88,28 +91,29 @@
   .cta-button:hover{transform:scale(1.04);background-position:100% 0}
   .cta-button:active{transform:scale(.96)}
 
-  .hero-featured{margin-top:48px;display:flex;gap:24px;align-items:center;text-align:left;max-width:620px;width:100%;
-    background:var(--card);border:1px solid var(--line);border-radius:24px;padding:24px 28px;text-decoration:none;
-    box-shadow:0 0 24px rgba(59,130,246,.22), inset 0 0 28px rgba(59,130,246,.06);
-    transition:transform .2s ease-out, border-color .2s, box-shadow .2s}
-  .hero-featured:hover{transform:scale(1.02);border-color:rgba(147,197,253,.6);box-shadow:0 0 32px rgba(59,130,246,.3)}
-  .featured-icon{width:84px;height:84px;border-radius:20px;flex-shrink:0;box-shadow:0 8px 24px rgba(249,115,22,.45);object-fit:cover}
   .kicker{color:var(--orange);letter-spacing:.22em;font-size:12px;font-weight:700;text-transform:uppercase}
-  .featured-title{font-size:28px;color:#fff;font-weight:800;margin:4px 0 6px}
-  .hero-featured p{color:var(--muted);line-height:1.5;font-size:15px}
 
   .section-title{font-size:clamp(30px,4.5vw,44px);text-align:center;font-weight:800;color:#fff;
     filter:drop-shadow(0 0 16px rgba(147,197,253,.45));margin-bottom:14px}
   .section-title-line{width:90px;height:3px;margin:0 auto 40px;border-radius:999px;
     background:linear-gradient(90deg,#38bdf8,#818cf8,#c084fc);box-shadow:0 0 12px rgba(129,140,248,.7)}
 
-  .about-intro{max-width:800px;margin:0 auto 36px;text-align:center;color:var(--muted);font-size:18px;line-height:1.6}
-  .about-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-  .about-card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:28px;
-    box-shadow:0 0 18px rgba(59,130,246,.18)}
-  .about-card svg{width:32px;height:32px;color:var(--blue)}
-  .about-card h3{margin:14px 0 10px;font-size:20px;color:#fff}
-  .about-card p{color:var(--muted);line-height:1.55}
+  .about-intro{max-width:820px;margin:0 auto 40px;text-align:center;color:#cbd5e1;font-size:18px;line-height:1.65}
+  .about-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .about-card{position:relative;background:#070b28e6;border:1px solid rgba(148,163,184,.22);border-radius:24px;padding:28px 26px;
+    box-shadow:0 10px 30px rgba(0,0,0,.5);backdrop-filter:blur(14px);transition:transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+    display:flex;flex-direction:column;justify-content:space-between}
+  .about-card:hover{transform:translateY(-6px);border-color:rgba(148,163,184,.5);box-shadow:0 20px 44px rgba(0,0,0,.7)}
+  .about-card-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}
+  .about-icon-box{width:48px;height:48px;border-radius:14px;display:grid;place-items:center;color:#fff;box-shadow:0 6px 16px rgba(0,0,0,.4)}
+  .about-icon-box.code{background:linear-gradient(135deg,#3b82f6,#4f46e5)}
+  .about-icon-box.design{background:linear-gradient(135deg,#a855f7,#db2777)}
+  .about-icon-box.video{background:linear-gradient(135deg,#f59e0b,#e11d48)}
+  .about-icon-box svg{width:24px;height:24px;stroke-width:2}
+  .about-tag{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#cbd5e1;
+    background:rgba(30,41,59,.8);border:1px solid rgba(71,85,105,.6);padding:4px 10px;border-radius:999px}
+  .about-card h3{font-size:21px;color:#fff;font-weight:700;margin:0 0 10px;letter-spacing:-.01em}
+  .about-card p{color:#cbd5e1;font-size:15px;line-height:1.6;margin:0}
 
   /* Projects Showcase */
   .main-project-card{background:#070b28e6;border:1px solid rgba(96,165,250,.3);border-radius:28px;padding:36px;
@@ -197,9 +201,22 @@
     .about-grid,.subprojects-grid{grid-template-columns:1fr}
     .main-project-card{flex-direction:column;text-align:center;padding:26px}
     .project-info{max-width:100%}
+    .mockup-showcase{max-width:100%;width:100%;gap:10px}
     .subproject-inner{flex-direction:column;text-align:center}
-    .hero-featured{flex-direction:column;text-align:center}
     header{backdrop-filter:none;background:rgba(4,6,26,.94)}
+  }
+  @media(max-width:640px){
+    #hero{padding:110px 16px 50px}
+    .hero-name{font-size:clamp(36px,9vw,54px)}
+    .mockup-showcase{gap:6px}
+    .mockup-phone{max-width:32%;border-radius:16px;border-width:2px}
+    .mockup-phone::before{width:20px;height:3px;top:4px}
+    .mockup-phone-center{max-width:36%}
+    .shorts-previews{width:100%;justify-content:center;margin-top:16px}
+    .shorts-thumb{width:30%;height:130px}
+    .morph-thumb{width:100%;max-width:280px;height:160px;margin:16px auto 0}
+    .contact-links{flex-direction:column;align-items:stretch;max-width:300px;margin:28px auto 0}
+    .contact-button{justify-content:center}
   }
   @media (prefers-reduced-motion:reduce){
     html{scroll-behavior:auto}
@@ -261,8 +278,10 @@
       <li><a href="#portfolio" data-en="Projects" data-ru="Проекты">Проекты</a></li>
       <li><a href="#contact" data-en="Contact" data-ru="Контакты">Контакты</a></li>
     </ul>
-    <button class="lang-switcher" id="langToggle" type="button" aria-label="Switch language">
-      <span class="lang-option" data-lang="en">EN</span><span>/</span><span class="lang-option active" data-lang="ru">RU</span>
+    <button class="lang-switcher" id="langToggle" aria-label="Toggle language">
+      <span class="lang-option active" data-lang="ru">RU</span>
+      <span style="opacity:.4">/</span>
+      <span class="lang-option" data-lang="en">EN</span>
     </button>
   </nav>
 </header>
@@ -277,9 +296,10 @@
     </div>
     <h1 class="hero-name">Tomas Shchegolev</h1>
     <p class="subtitle" data-en="Creative Developer & Designer | Crypto Experience & Image Morphing" data-ru="Креативный программист и дизайнер | Опыт в крипте и Image Morphing">Креативный программист и дизайнер | Опыт в крипте и Image Morphing</p>
-    <p class="hero-line">
-      <span data-en="I create mobile apps, crypto projects and " data-ru="Создаю мобильные приложения, проекты в крипте и занимаюсь ">Создаю мобильные приложения, проекты в крипте и занимаюсь </span><span class="hero-morph-pill" data-en="Image Morphing" data-ru="Image Morphing">Image Morphing</span><span data-en=" editing with special effects" data-ru=" монтажом со спецэффектами"> монтажом со спецэффектами</span>
-    </p>
+    <div class="hero-badge">
+      <span class="pulse-dot"></span>
+      <span data-en="28 y.o. · Bishkek" data-ru="28 лет · г. Бишкек">28 лет · г. Бишкек</span>
+    </div>
     <a href="#portfolio" class="cta-button" data-en="View My Work" data-ru="Посмотреть работы">Посмотреть работы</a>
   </section>
 
@@ -290,17 +310,32 @@
       <p class="about-intro" data-en="I'm Tomas — creative developer and designer with experience in crypto and Image Morphing. I create mobile applications, digital tools and visual projects." data-ru="Я Томас — креативный программист и дизайнер с опытом в крипте и Image Morphing. Создаю мобильные приложения, цифровые инструменты и творческие визуальные проекты.">Я Томас — креативный программист и дизайнер с опытом в крипте и Image Morphing. Создаю мобильные приложения, цифровые инструменты и творческие визуальные проекты.</p>
       <div class="about-grid">
         <div class="about-card">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></svg>
+          <div class="about-card-top">
+            <div class="about-icon-box code">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></svg>
+            </div>
+            <span class="about-tag">Mobile & Web</span>
+          </div>
           <h3 data-en="Development & Crypto" data-ru="Программирование и крипта">Программирование и крипта</h3>
           <p data-en="Mobile applications, smart contracts and tools for crypto and web projects." data-ru="Мобильные приложения, смарт-контракты и цифровые инструменты для крипто- и веб-проектов.">Мобильные приложения, смарт-контракты и цифровые инструменты для крипто- и веб-проектов.</p>
         </div>
         <div class="about-card">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><circle cx="13.5" cy="6.5" r="2.5"/><circle cx="6" cy="12" r="2"/><circle cx="17" cy="16" r="2"/><path d="M9 12h4.5M13.5 9v4"/></svg>
+          <div class="about-card-top">
+            <div class="about-icon-box design">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="13.5" cy="6.5" r="2.5"/><circle cx="6" cy="12" r="2"/><circle cx="17" cy="16" r="2"/><path d="M9 12h4.5M13.5 9v4"/></svg>
+            </div>
+            <span class="about-tag">UI / UX</span>
+          </div>
           <h3 data-en="Design" data-ru="Дизайн">Дизайн</h3>
           <p data-en="Interfaces, visual concepts, composition and atmosphere with attention to details." data-ru="Интерфейсы, визуальные концепции, композиция и атмосфера с вниманием к деталям.">Интерфейсы, визуальные концепции, композиция и атмосфера с вниманием к деталям.</p>
         </div>
         <div class="about-card">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M10 9l5 3-5 3z"/></svg>
+          <div class="about-card-top">
+            <div class="about-icon-box video">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M10 9l5 3-5 3z"/></svg>
+            </div>
+            <span class="about-tag">VFX & Motion</span>
+          </div>
           <h3 data-en="Video Editing & Morphing" data-ru="Монтаж и Image Morphing">Монтаж и Image Morphing</h3>
           <p data-en="Image morphing from frame A to frame B, video editing, transitions and visual effects for videos." data-ru="Морфинг изображений из кадра А в кадр Б, видеомонтаж, переходы и визуальные спецэффекты для роликов.">Морфинг изображений из кадра А в кадр Б, видеомонтаж, переходы и визуальные спецэффекты для роликов.</p>
         </div>
@@ -332,9 +367,9 @@
         </div>
 
         <div class="mockup-showcase">
-          <!-- Левый телефон: kg-settings.jpg ("Настройки") -->
+          <!-- Левый телефон: kg-limits.jpg ("Лимиты") -->
           <div class="mockup-phone">
-            <img src="assets/kg-settings.jpg" alt="Настройки" width="640" height="1280">
+            <img src="assets/kg-limits.jpg" alt="Лимиты приложений" width="640" height="1280">
           </div>
           <!-- Центральный телефон: kg-protected-main.jpg ("Вы под защитой") -->
           <div class="mockup-phone mockup-phone-center">
@@ -354,7 +389,7 @@
           <div class="subproject-inner">
             <div style="flex:1">
               <h3 data-en="YouTube Shorts" data-ru="YouTube Shorts">YouTube Shorts</h3>
-              <p data-en="Creating viral short-form videos for YouTube Shorts." data-ru="Создание вирусных коротких видео для YouTube Shorts.">Создание вирусных коротких видео для YouTube Shorts.</p>
+              <p data-en="Creating short-form videos for YouTube Shorts." data-ru="Создание коротких видео для YouTube Shorts.">Создание коротких видео для YouTube Shorts.</p>
               <button type="button" class="project-detail-btn" id="shortsToggleBtn" onclick="playShort('ezRZMZL00-Y')">
                 <svg viewBox="0 0 24 24" style="width:20px;height:20px;flex-shrink:0;fill:#FF0000" aria-hidden="true">
                   <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
