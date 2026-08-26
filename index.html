@@ -61,27 +61,41 @@
   .lang-option.active{color:var(--blue);opacity:1;text-shadow:0 0 10px rgba(147,197,253,.8)}
 
   /* Hero */
-  #hero{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;min-height:calc(100vh - 70px);padding:40px 20px}
-  .hero-avatar{position:relative;width:150px;height:150px;border-radius:999px;overflow:hidden;
-    box-shadow:0 0 32px rgba(96,165,250,.4);border:2px solid rgba(147,197,253,.6);margin-bottom:24px}
-  .hero-avatar img,.hero-avatar video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-  .hero-name{font-size:clamp(38px,5.5vw,56px);font-weight:800;letter-spacing:-.03em;margin-bottom:12px;
-    background:linear-gradient(135deg,#ffffff 20%,#e0e7ff 60%,#93c5fd 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-  .subtitle{font-size:clamp(16px,2.2vw,20px);color:var(--muted);max-width:680px;margin-bottom:18px;line-height:1.55}
+  #hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;
+    text-align:center;padding:130px 20px 70px}
+  .hero-avatar{position:relative;width:150px;height:150px;border-radius:50%;overflow:hidden;margin-bottom:26px;
+    border:2px solid rgba(148,163,255,.42);box-shadow:0 0 34px rgba(99,102,241,.45);background:#0b1030}
+  .hero-avatar::after{content:"";position:absolute;inset:-2px;border-radius:inherit;pointer-events:none;
+    box-shadow:inset 0 0 0 1px rgba(255,255,255,.18)}
+  .hero-avatar video,.hero-avatar img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
   
-  .hero-badge{display:inline-flex;align-items:center;gap:10px;padding:8px 20px;border-radius:999px;
-    background:rgba(15,23,62,.75);border:1px solid rgba(96,165,250,.4);color:#e2e8f0;font-size:15px;font-weight:600;
-    box-shadow:0 0 16px rgba(59,130,246,.25);margin-bottom:28px}
-  .pulse-dot{width:9px;height:9px;border-radius:999px;background:#10b981;box-shadow:0 0 10px #10b981;
-    animation:pulse 2s cubic-bezier(0.4,0,0.6,1) infinite}
-  @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.85)}}
+  .hero-name{position:relative;font-size:clamp(44px,7.4vw,86px);font-weight:800;letter-spacing:.045em;line-height:1.05;
+    background-image:linear-gradient(180deg,#fff 0%,#f3f6ff 14%,#c9d3e8 36%,#8e9bb4 48%,#f8faff 60%,#a7b3cb 82%,#eef3fb 100%);
+    background-size:100% 220%;-webkit-background-clip:text;background-clip:text;color:transparent;
+    filter:drop-shadow(0 1px 0 rgba(255,255,255,.28)) drop-shadow(0 3px 0 rgba(0,0,0,.38)) drop-shadow(0 10px 20px rgba(0,0,0,.55));
+    animation:metal 10s ease-in-out infinite;margin-bottom:0}
+  .hero-name::after{content:"";position:absolute;inset:0;pointer-events:none;
+    background:linear-gradient(105deg,transparent 32%,rgba(255,255,255,.28) 48%,transparent 64%);
+    background-size:220% 100%;mix-blend-mode:screen;opacity:.55;
+    -webkit-mask-image:linear-gradient(#000,#000);mask-image:linear-gradient(#000,#000);
+    animation:sheen 7.5s ease-in-out infinite}
+  @keyframes metal{0%,100%{background-position:0% 0%}50%{background-position:0% 100%}}
+  @keyframes sheen{0%,100%{background-position:-120% 0}50%{background-position:120% 0}}
 
-  .cta-button{display:inline-flex;align-items:center;justify-content:center;padding:16px 38px;border-radius:999px;
-    font-size:17px;font-weight:700;color:#fff;text-decoration:none;
-    background:linear-gradient(135deg,#2563eb,#4f46e5,#7c3aed);background-size:200% 200%;
-    box-shadow:0 0 26px rgba(79,70,229,.55);border:1px solid rgba(165,180,252,.4);
-    transition:transform .18s ease-out,background-position .18s ease-out}
-  .cta-button:hover{transform:scale(1.04);background-position:100% 0}
+  .subtitle{color:var(--blue);font-size:clamp(17px,2.2vw,22px);font-weight:600;margin-top:16px;max-width:680px;line-height:1.55}
+  
+  .hero-badge{margin-top:14px;display:inline-flex;align-items:center;gap:8px;padding:8px 18px;border-radius:999px;
+    border:1px solid rgba(56,189,248,.35);background:rgba(8,20,55,.65);color:#bae6fd;font-weight:600;font-size:15px;
+    backdrop-filter:blur(8px);box-shadow:0 0 20px rgba(56,189,248,.25)}
+  .pulse-dot{width:8px;height:8px;border-radius:50%;background:#34d399;box-shadow:0 0 8px #34d399;animation:pulse 2s infinite}
+  @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.8)}}
+
+  .cta-button{margin-top:32px;display:inline-block;padding:17px 48px;border-radius:999px;text-decoration:none;
+    background:linear-gradient(90deg,#f59e0b,#ec4899 55%,#8b5cf6);background-size:160% 100%;color:#fff;font-weight:700;font-size:18px;
+    border:1px solid rgba(255,255,255,.22);
+    box-shadow:0 0 0 4px rgba(255,255,255,.07),0 0 22px rgba(236,72,153,.42),0 0 40px rgba(139,92,246,.28);
+    transition:transform .18s ease-out,box-shadow .18s ease-out}
+  .cta-button:hover{transform:scale(1.04);box-shadow:0 0 0 6px rgba(255,255,255,.12),0 0 30px rgba(236,72,153,.65),0 0 50px rgba(139,92,246,.45)}
   .cta-button:active{transform:scale(.96)}
 
   .kicker{color:var(--orange);letter-spacing:.22em;font-size:12px;font-weight:700;text-transform:uppercase}
@@ -91,7 +105,7 @@
   .section-title-line{width:96px;height:3.5px;margin:0 auto 42px;border-radius:999px;
     background:linear-gradient(90deg,#38bdf8,#818cf8,#c084fc);box-shadow:0 0 16px rgba(129,140,248,.85)}
 
-  .about-intro{max-width:860px;margin:0 auto 46px;text-align:center;color:#f1f5f9;font-family:"Golos Text","Manrope",sans-serif;font-size:19px;line-height:1.75;font-weight:500;letter-spacing:-0.01em;text-shadow:0 2px 12px rgba(0,0,0,.6)}
+  .about-intro{max-width:860px;margin:0 auto 46px;text-align:center;color:#e2e8f0;font-size:clamp(17px,2vw,20px);line-height:1.75;font-weight:500;text-shadow:0 2px 14px rgba(0,0,0,.6)}
   .about-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
   .about-card{position:relative;background:#070b28f0;border:1px solid rgba(148,163,184,.28);border-radius:24px;padding:30px 28px;
     box-shadow:0 12px 34px rgba(0,0,0,.55);backdrop-filter:blur(16px);transition:all .3s cubic-bezier(0.16,1,0.3,1);
@@ -105,12 +119,12 @@
   .about-icon-box svg{width:26px;height:26px;stroke-width:2}
   .about-tag{font-size:11.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#93c5fd;
     background:rgba(15,23,62,.85);border:1px solid rgba(147,197,253,.35);padding:5px 12px;border-radius:999px;box-shadow:0 0 12px rgba(59,130,246,.2)}
-  .about-card h3{font-size:22px;color:#fff;font-weight:800;margin:0 0 12px;letter-spacing:-.015em;font-family:"Montserrat","Outfit","Golos Text",sans-serif}
-  .about-card p{color:#e2e8f0;font-family:"Golos Text","Manrope",sans-serif;font-size:15.5px;line-height:1.7;font-weight:450;letter-spacing:-0.008em;margin:0}
+  .about-card h3{font-size:22px;color:#fff;font-weight:800;margin:0 0 12px;letter-spacing:-.015em}
+  .about-card p{color:var(--muted);font-size:15.5px;line-height:1.65;font-weight:400;margin:0}
 
-  #contact p{font-family:"Golos Text","Manrope",sans-serif;font-size:20px;color:#f8fafc;line-height:1.65;font-weight:550;letter-spacing:-0.015em;margin:0 auto 36px;max-width:720px;text-align:center;text-shadow:0 2px 14px rgba(0,0,0,.6)}
+  #contact p{font-size:clamp(17px,2vw,20px);color:#e2e8f0;line-height:1.65;font-weight:500;margin:0 auto 36px;max-width:720px;text-align:center;text-shadow:0 2px 14px rgba(0,0,0,.6)}
 
-  #hidden p.hidden-subtitle{font-family:"Golos Text","Manrope",sans-serif;font-size:16.5px;color:#cbd5e1;line-height:1.7;font-weight:450;letter-spacing:-0.008em;text-align:center;max-width:760px;margin:0 auto 32px}
+  .hidden-subtitle{font-size:16px;color:var(--muted);line-height:1.7;font-weight:450;text-align:center;max-width:760px;margin:0 auto 32px;display:block}
 
   /* Projects Showcase */
   .main-project-card{background:#070b28e6;border:1px solid rgba(96,165,250,.3);border-radius:28px;padding:36px;
