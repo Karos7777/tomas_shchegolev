@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#05081e">
+<meta name="description" content="Tomas Shchegolev — разработчик, дизайнер, монтажёр и креативщик. KarosGuard — приложение в Google Play.">
+<meta property="og:title" content="Tomas Shchegolev — Portfolio">
+<meta property="og:description" content="Разработчик, дизайнер, монтажёр и креативщик. Мобильные приложения, дизайн и видеомонтаж.">
+<meta property="og:image" content="assets/avatar-poster.jpg">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Tomas Shchegolev — Portfolio">
+<meta name="twitter:description" content="Разработчик, дизайнер, монтажёр и креативщик.">
+<meta name="twitter:image" content="assets/avatar-poster.jpg">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<title>Tomas Shchegolev — Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --card:rgba(10,14,40,.78); --line:rgba(96,165,250,.4);
+    --txt:#eef2ff; --muted:#b7c4d8; --blue:#93c5fd; --orange:#fbbf24;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+  body{background:#05081e;color:var(--txt);font-family:Outfit,"Segoe UI",system-ui,sans-serif;overflow-x:hidden}
+  button:not(:disabled),[role="button"]:not(:disabled){cursor:pointer}
+  h1,h2,h3{text-wrap:balance}
+  p{text-wrap:pretty}
+
+  .cosmos{position:fixed;inset:0;z-index:0;pointer-events:none;background:
+    radial-gradient(ellipse at 50% 38%, rgba(4,6,26,.58) 0%, rgba(4,6,26,.22) 46%, transparent 72%),
+    url("assets/cosmos.jpg") center/cover no-repeat, #04061a}
+  .vignette{position:fixed;inset:0;z-index:0;pointer-events:none;background:
+    radial-gradient(ellipse at 50% 0%, transparent 40%, rgba(4,6,26,.45) 100%),
+    linear-gradient(180deg, rgba(4,6,26,.2), transparent 18%, transparent 78%, rgba(4,6,26,.72))}
+  .starfield{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+  .starfield span{position:absolute;border-radius:999px;opacity:.55;animation:twinkle 5.5s ease-in-out infinite}
+  @keyframes twinkle{0%,100%{opacity:.2;transform:scale(.85)}50%{opacity:.85;transform:scale(1.15)}}
+  main,header,footer{position:relative;z-index:1}
+  section{scroll-margin-top:90px;padding:90px 20px}
+  .container{max-width:1100px;margin:0 auto}
+
+  header{position:fixed;top:0;left:0;right:0;z-index:20;
+    background:linear-gradient(180deg,rgba(4,6,26,.88),rgba(4,6,26,.28));backdrop-filter:blur(10px)}
+  nav{max-width:1250px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:14px 32px;gap:16px}
+  .logo{display:inline-flex;align-items:center;text-decoration:none;line-height:0;
+    filter:drop-shadow(0 0 12px rgba(124,140,248,.65));transition:transform .15s ease-out}
+  .logo:hover{transform:scale(1.05)}
+  .logo svg{width:64px;height:40px}
+  .nav-links{display:flex;gap:44px;list-style:none}
+  .nav-links a{color:#eef2ff;text-decoration:none;font-size:17px;transition:color .15s}
+  .nav-links a:hover{color:var(--orange)}
+  .lang-switcher{display:flex;align-items:center;gap:6px;border:1px solid rgba(59,130,246,.7);border-radius:999px;
+    padding:10px 20px;background:rgba(8,12,40,.6);cursor:pointer;font-size:16px;font-weight:700;color:#fff;min-height:44px;
+    transition:transform .16s ease-out, border-color .16s ease-out}
+  .lang-switcher:hover{transform:scale(1.03)}
+  .lang-option{opacity:.72}
+  .lang-option.active{color:var(--orange);opacity:1}
+
+  #hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;
+    text-align:center;padding:130px 20px 70px}
+  .hero-avatar{position:relative;width:150px;height:150px;border-radius:50%;overflow:hidden;margin-bottom:26px;
+    border:2px solid rgba(148,163,255,.42);box-shadow:0 0 34px rgba(99,102,241,.45);background:#0b1030}
+  .hero-avatar::after{content:"";position:absolute;inset:-2px;border-radius:inherit;pointer-events:none;
+    box-shadow:inset 0 0 0 1px rgba(255,255,255,.18)}
+  .hero-avatar video,.hero-avatar img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .hero-name{position:relative;font-size:clamp(42px,7.4vw,86px);font-weight:800;letter-spacing:.045em;line-height:1.05;
+    background-image:linear-gradient(180deg,#fff 0%,#f3f6ff 14%,#c9d3e8 36%,#8e9bb4 48%,#f8faff 60%,#a7b3cb 82%,#eef3fb 100%);
+    background-size:100% 220%;-webkit-background-clip:text;background-clip:text;color:transparent;
+    filter:drop-shadow(0 1px 0 rgba(255,255,255,.28)) drop-shadow(0 3px 0 rgba(0,0,0,.38)) drop-shadow(0 10px 20px rgba(0,0,0,.55));
+    animation:metal 10s ease-in-out infinite}
+  .hero-name::after{content:"";position:absolute;inset:0;pointer-events:none;
+    background:linear-gradient(105deg,transparent 32%,rgba(255,255,255,.28) 48%,transparent 64%);
+    background-size:220% 100%;mix-blend-mode:screen;opacity:.55;
+    -webkit-mask-image:linear-gradient(#000,#000);mask-image:linear-gradient(#000,#000);
+    animation:sheen 7.5s ease-in-out infinite}
+  .subtitle{color:var(--blue);font-size:clamp(17px,2.2vw,22px);font-weight:600;margin-top:16px}
+  .hero-line{color:#eef2ff;margin-top:12px;font-size:16px}
+  .accent{color:var(--orange)}
+  .cta-button{margin-top:32px;display:inline-block;padding:17px 48px;border-radius:999px;text-decoration:none;
+    background:linear-gradient(90deg,#f59e0b,#ec4899 55%,#8b5cf6);background-size:160% 100%;color:#fff;font-weight:700;font-size:18px;
+    border:1px solid rgba(255,255,255,.22);
+    box-shadow:0 0 0 4px rgba(255,255,255,.07),0 0 22px rgba(236,72,153,.42),0 0 40px rgba(139,92,246,.28);
+    transition:transform .18s ease-out,background-position .18s ease-out}
+  .cta-button:hover{transform:scale(1.04);background-position:100% 0}
+  .cta-button:active{transform:scale(.96)}
+
+  .hero-featured{margin-top:48px;display:flex;gap:24px;align-items:center;text-align:left;max-width:660px;width:100%;
+    background:var(--card);border:1px solid var(--line);border-radius:22px;padding:26px 30px;text-decoration:none;
+    box-shadow:0 0 24px rgba(59,130,246,.22), inset 0 0 28px rgba(59,130,246,.06)}
+  .featured-icon{width:98px;height:98px;flex-shrink:0;filter:drop-shadow(0 6px 16px rgba(249,115,22,.45))}
+  .kicker{color:var(--orange);letter-spacing:.22em;font-size:12px;font-weight:700;text-transform:uppercase}
+  .featured-title{font-size:30px;color:#fff;font-weight:800;margin:6px 0 8px}
+  .hero-featured p,.play-card p{color:var(--muted);line-height:1.5}
+
+  .play-card{margin:26px auto 0;display:flex;gap:24px;align-items:center;text-align:left;max-width:760px;width:100%;
+    padding:26px 30px;border-radius:22px;border:1.5px solid transparent;text-decoration:none;
+    background:linear-gradient(var(--card),var(--card)) padding-box,
+               linear-gradient(120deg,#22d3ee,#818cf8,#c084fc,#ec4899,#22d3ee) border-box;
+    background-size:auto,220% 220%;
+    background-position:0 0, 0% 50%;
+    animation:borderShift 12s linear infinite;
+    box-shadow:0 0 22px rgba(34,211,238,.28),0 0 32px rgba(236,72,153,.2)}
+  .gp-badge{display:flex;align-items:center;gap:12px;background:#000;border-radius:14px;padding:12px 20px;
+    border:1px solid rgba(255,255,255,.18);flex-shrink:0}
+  .gp-badge svg{width:34px;height:34px;flex-shrink:0}
+  .gp-badge .btn-sub{display:block;font-size:11px;letter-spacing:1px;color:#e2e8f0}
+  .gp-badge .btn-main{display:block;font-size:22px;font-weight:700;color:#fff}
+  .play-card .featured-title{font-size:28px}
+  .play-link{color:#7dd3fc;font-size:14px;word-break:break-all}
+
+  .section-title{font-size:clamp(30px,4.5vw,44px);text-align:center;font-weight:800;color:#fff;
+    filter:drop-shadow(0 0 16px rgba(147,197,253,.45));margin-bottom:44px}
+  .about-intro{max-width:800px;margin:0 auto 36px;text-align:center;color:var(--muted);font-size:18px;line-height:1.6}
+  .about-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .about-card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:28px;
+    box-shadow:0 0 18px rgba(59,130,246,.18)}
+  .about-card svg{width:32px;height:32px;color:var(--blue)}
+  .about-card h3{margin:14px 0 10px;font-size:20px;color:#fff}
+  .about-card p{color:var(--muted);line-height:1.55}
+
+  .project-card{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:34px;
+    margin-bottom:44px;box-shadow:0 0 24px rgba(59,130,246,.2)}
+  .project-card h3{color:#fff;font-size:26px;margin:10px 0 12px}
+  .project-description{color:var(--muted);line-height:1.6;max-width:760px}
+  .kg-head{display:flex;align-items:center;gap:20px;flex-wrap:wrap;margin-bottom:8px}
+  .kg-head img{width:84px;height:84px}
+  .gallery{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:26px}
+  .gallery figure{margin:0}
+  .gallery figure.main{grid-column:1/-1}
+  .gallery img{width:auto;max-width:100%;height:auto;max-height:480px;object-fit:contain;border-radius:14px;background:#020512;display:block;margin:0 auto;
+    border:1px solid rgba(96,165,250,.25)}
+  .gallery figure.main img{max-height:640px}
+  .gallery figcaption{color:#94a3b8;font-size:13px;margin-top:8px;text-align:center}
+  .google-play-btn{margin-top:24px;display:inline-flex;align-items:center;gap:12px;background:#000;
+    border:1.5px solid rgba(96,165,250,.45);border-radius:14px;padding:10px 22px;text-decoration:none;transition:transform .15s}
+  .google-play-btn:hover{transform:scale(1.04)}
+  .project-video video{width:100%;max-width:320px;border-radius:16px;margin:22px auto 0;display:block;
+    box-shadow:0 12px 36px rgba(0,0,0,.6)}
+  .shorts-player{width:100%;max-width:290px;margin:24px auto 0;aspect-ratio:9/16;border-radius:20px;
+    overflow:hidden;border:2px solid rgba(239,68,68,.35);box-shadow:0 12px 36px rgba(0,0,0,.6);background:#000;position:relative}
+  .shorts-player iframe,.shorts-player img{width:100%;height:100%;border:none;display:block;object-fit:cover}
+  .shorts-play{position:absolute;inset:0;width:100%;height:100%;border:0;background:transparent;cursor:pointer}
+  .play-orb{position:absolute;inset:0;display:grid;place-items:center;background:rgba(0,0,0,.4)}
+  .play-orb span{width:56px;height:56px;border-radius:50%;background:#ef4444;display:grid;place-items:center;
+    box-shadow:0 8px 24px rgba(239,68,68,.55)}
+  .play-orb svg{width:28px;height:28px;margin-left:2px;fill:#fff}
+  .yt-button{margin-top:20px;display:inline-flex;align-items:center;gap:10px;background:#ef4444;color:#fff;
+    padding:11px 24px;border-radius:12px;font-weight:600;text-decoration:none;min-height:44px}
+
+  .spoiler{background:var(--card);border:1px solid var(--line);border-radius:20px;overflow:hidden;margin-top:12px}
+  .spoiler summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;
+    gap:16px;padding:18px 22px;font-weight:700;color:#fff;min-height:52px}
+  .spoiler summary::-webkit-details-marker{display:none}
+  .spoiler .chev{width:18px;height:18px;flex-shrink:0;transition:transform .18s ease-out}
+  .spoiler[open] .chev{transform:rotate(180deg)}
+  .spoiler-body{padding:0 22px 22px;color:var(--muted)}
+
+  .contact-links{display:flex;gap:20px;justify-content:center;flex-wrap:wrap;margin-top:34px}
+  .contact-button{display:inline-flex;align-items:center;gap:10px;padding:14px 30px;border-radius:999px;
+    color:#fff;font-weight:700;text-decoration:none;transition:transform .15s;min-height:44px}
+  .contact-button:hover{transform:scale(1.05)}
+  .contact-button svg{width:21px;height:21px}
+  .telegram{background:linear-gradient(90deg,#229ED9,#38bdf8);box-shadow:0 0 22px rgba(56,189,248,.4)}
+  .email{background:linear-gradient(90deg,#f59e0b,#a855f7);box-shadow:0 0 22px rgba(168,85,247,.4)}
+  #contact p{text-align:center;color:var(--muted)}
+
+  footer{padding:34px 20px;text-align:center;color:#94a3b8;border-top:1px solid rgba(148,163,184,.15);
+    background:rgba(4,6,26,.6)}
+
+  @keyframes metal{0%,100%{background-position:0 0}50%{background-position:0 100%}}
+  @keyframes sheen{0%,100%{background-position:120% 0}50%{background-position:-20% 0}}
+  @keyframes borderShift{0%{background-position:0 0, 0% 50%}100%{background-position:0 0, 100% 50%}}
+
+  @media(max-width:900px){
+    nav{padding:12px 16px;gap:10px}
+    .nav-links{gap:16px}
+    .nav-links a{font-size:15px}
+    .about-grid,.gallery{grid-template-columns:1fr}
+    .gallery figure.main{grid-column:auto}
+    .hero-featured,.play-card{flex-direction:column;text-align:center}
+    header{backdrop-filter:none;background:rgba(4,6,26,.94)}
+    .play-card{animation:none}
+  }
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    .hero-name,.play-card,.starfield span{animation:none}
+    .cta-button,.logo,.google-play-btn,.contact-button,.spoiler .chev{transition:none}
+  }
+</style>
+</head>
+<body>
+<div class="cosmos" aria-hidden="true"></div>
+<div class="vignette" aria-hidden="true"></div>
+<div class="starfield" aria-hidden="true">
+  <span style="left:11%;top:7%;width:2.2px;height:2.2px;background:rgb(255 255 255 / .8)"></span>
+  <span style="left:48%;top:60%;width:1.2px;height:1.2px;background:rgb(255 170 80 / .7);animation-delay:.45s"></span>
+  <span style="left:85%;top:13%;width:1.2px;height:1.2px;background:rgb(140 160 255 / .75);animation-delay:.9s"></span>
+  <span style="left:22%;top:66%;width:1.2px;height:1.2px;background:rgb(220 120 255 / .55);animation-delay:1.35s"></span>
+  <span style="left:59%;top:19%;width:2.2px;height:2.2px;background:rgb(255 255 255 / .8);animation-delay:1.8s"></span>
+  <span style="left:96%;top:72%;width:1.2px;height:1.2px;background:rgb(255 170 80 / .7);animation-delay:2.25s"></span>
+  <span style="left:33%;top:25%;width:1.2px;height:1.2px;background:rgb(140 160 255 / .75);animation-delay:2.7s"></span>
+  <span style="left:70%;top:78%;width:1.2px;height:1.2px;background:rgb(220 120 255 / .55);animation-delay:3.15s"></span>
+  <span style="left:7%;top:31%;width:2.2px;height:2.2px;background:rgb(255 255 255 / .8);animation-delay:.2s"></span>
+  <span style="left:44%;top:84%;width:1.2px;height:1.2px;background:rgb(255 170 80 / .7);animation-delay:.65s"></span>
+  <span style="left:81%;top:37%;width:1.2px;height:1.2px;background:rgb(140 160 255 / .75);animation-delay:1.1s"></span>
+  <span style="left:18%;top:90%;width:1.2px;height:1.2px;background:rgb(220 120 255 / .55);animation-delay:1.55s"></span>
+  <span style="left:55%;top:43%;width:2.2px;height:2.2px;background:rgb(255 255 255 / .8);animation-delay:2s"></span>
+  <span style="left:92%;top:96%;width:1.2px;height:1.2px;background:rgb(255 170 80 / .7);animation-delay:2.45s"></span>
+  <span style="left:29%;top:49%;width:1.2px;height:1.2px;background:rgb(140 160 255 / .75);animation-delay:2.9s"></span>
+  <span style="left:66%;top:2%;width:1.2px;height:1.2px;background:rgb(220 120 255 / .55);animation-delay:.3s"></span>
+  <span style="left:3%;top:55%;width:2.2px;height:2.2px;background:rgb(255 255 255 / .8);animation-delay:.75s"></span>
+  <span style="left:40%;top:8%;width:1.2px;height:1.2px;background:rgb(255 170 80 / .7);animation-delay:1.2s"></span>
+  <span style="left:77%;top:61%;width:1.2px;height:1.2px;background:rgb(140 160 255 / .75);animation-delay:1.65s"></span>
+  <span style="left:14%;top:14%;width:1.2px;height:1.2px;background:rgb(220 120 255 / .55);animation-delay:2.1s"></span>
+  <span style="left:51%;top:67%;width:2.2px;height:2.2px;background:rgb(255 255 255 / .8);animation-delay:2.55s"></span>
+  <span style="left:88%;top:20%;width:1.2px;height:1.2px;background:rgb(255 170 80 / .7);animation-delay:3s"></span>
+  <span style="left:25%;top:73%;width:1.2px;height:1.2px;background:rgb(140 160 255 / .75);animation-delay:.4s"></span>
+  <span style="left:62%;top:26%;width:1.2px;height:1.2px;background:rgb(220 120 255 / .55);animation-delay:.85s"></span>
+  <span style="left:99%;top:79%;width:2.2px;height:2.2px;background:rgb(255 255 255 / .8);animation-delay:1.3s"></span>
+  <span style="left:36%;top:32%;width:1.2px;height:1.2px;background:rgb(255 170 80 / .7);animation-delay:1.75s"></span>
+</div>
+
+<header>
+  <nav>
+    <a class="logo" href="#hero" aria-label="Tomas Shchegolev">
+      <svg viewBox="0 0 72 44" aria-hidden="true">
+        <defs>
+          <linearGradient id="tsGrad" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#9be8ff"/>
+            <stop offset=".45" stop-color="#7c8cf8"/>
+            <stop offset="1" stop-color="#c05cff"/>
+          </linearGradient>
+        </defs>
+        <g font-family="Outfit, Segoe UI, sans-serif" font-size="34" font-weight="800" font-style="italic" transform="skewX(-6)">
+          <text x="8" y="33" fill="url(#tsGrad)" stroke="rgba(10,14,40,.9)" stroke-width="3" paint-order="stroke">TS</text>
+        </g>
+      </svg>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#about" data-en="About" data-ru="О себе">О себе</a></li>
+      <li><a href="#portfolio" data-en="Projects" data-ru="Проекты">Проекты</a></li>
+      <li><a href="#contact" data-en="Contact" data-ru="Контакты">Контакты</a></li>
+    </ul>
+    <button class="lang-switcher" id="langToggle" type="button" aria-label="Switch language">
+      <span class="lang-option" data-lang="en">EN</span><span>/</span><span class="lang-option active" data-lang="ru">RU</span>
+    </button>
+  </nav>
+</header>
+
+<main>
+  <section id="hero">
+    <div class="hero-avatar">
+      <img src="assets/avatar-poster.jpg" alt="Tomas Shchegolev">
+      <video autoplay muted loop playsinline preload="auto" poster="assets/avatar-poster.jpg">
+        <source src="assets/avatar.mp4" type="video/mp4">
+      </video>
+    </div>
+    <h1 class="hero-name">Tomas Shchegolev</h1>
+    <p class="subtitle" data-en="Developer, Designer, Video Editor & Creative Guy" data-ru="Разработчик, дизайнер, монтажёр и креативщик">Разработчик, дизайнер, монтажёр и креативщик</p>
+    <p class="hero-line">
+      <span data-en="I mostly create mobile apps for Android and have been doing " data-ru="В основном создаю мобильные приложения для Android и занимался ">В основном создаю мобильные приложения для Android и занимался </span><span class="accent" data-en="Image Morphing" data-ru="морфингом изображений">морфингом изображений</span>
+    </p>
+    <a href="#portfolio" class="cta-button" data-en="View My Work" data-ru="Посмотреть работы">Посмотреть работы</a>
+
+    <a class="hero-featured" href="#karosguard" aria-label="KarosGuard project">
+      <img class="featured-icon" src="assets/karosguard-icon.svg" alt="">
+      <div>
+        <div class="kicker" data-en="Featured Project" data-ru="Избранный проект">Избранный проект</div>
+        <div class="featured-title">KarosGuard</div>
+        <p data-en="Mobile application for protection and security with intelligent monitoring." data-ru="Мобильное приложение для защиты и безопасности с интеллектуальным мониторингом.">Мобильное приложение для защиты и безопасности с интеллектуальным мониторингом.</p>
+      </div>
+    </a>
+
+    <a class="play-card" href="https://play.google.com/store/apps/details?id=com.karosguard.app" target="_blank" rel="noopener noreferrer">
+      <div class="gp-badge">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path fill="#4285F4" d="M3.6 1.8c-.3.3-.5.8-.5 1.4v17.6c0 .6.2 1.1.5 1.4l.1.1 9.9-9.9v-.2L3.6 1.8z"/>
+          <path fill="#FBBC04" d="M16.9 15.5l-3.3-3.3v-.4l3.3-3.3.1.1 3.9 2.2c1.1.6 1.1 1.6 0 2.2l-3.9 2.2-.1.1z"/>
+          <path fill="#EA4335" d="M13.6 12.2L3.6 22.2c.4.4 1 .4 1.7 0l11.7-6.7-3.4-3.3z"/>
+          <path fill="#34A853" d="M13.6 11.8l3.4-3.3L5.3 1.8c-.7-.4-1.3-.4-1.7 0l10 10z"/>
+        </svg>
+        <div><span class="btn-sub" data-en="GET IT ON" data-ru="ДОСТУПНО В">ДОСТУПНО В</span><span class="btn-main">Google Play</span></div>
+      </div>
+      <div>
+        <div class="kicker" data-en="My App on Google Play" data-ru="Моё приложение в Google Play">Моё приложение в Google Play</div>
+        <div class="featured-title">KarosGuard — Porn Blocker</div>
+        <p data-en="Blocking 18+ content and screen time control on Android" data-ru="Блокировка контента 18+ и контроль экранного времени на Android">Блокировка контента 18+ и контроль экранного времени на Android</p>
+        <span class="play-link">play.google.com/store/apps/details?id=com.karosguard.app</span>
+      </div>
+    </a>
+  </section>
+
+  <section id="about">
+    <div class="container">
+      <h2 class="section-title" data-en="About Me" data-ru="О себе">О себе</h2>
+      <p class="about-intro" data-en="I'm Tomas — developer, designer, video editor and creative guy. I create mobile applications, digital tools and creative visual projects." data-ru="Я Томас — разработчик, дизайнер, монтажёр и креативный парень. Создаю мобильные приложения, цифровые инструменты и творческие визуальные проекты.">Я Томас — разработчик, дизайнер, монтажёр и креативный парень. Создаю мобильные приложения, цифровые инструменты и творческие визуальные проекты.</p>
+      <div class="about-grid">
+        <div class="about-card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></svg>
+          <h3 data-en="Programming" data-ru="Программирование">Программирование</h3>
+          <p data-en="Mobile applications and many personal tools and programs built around my own ideas." data-ru="Мобильные приложения и множество собственных программ и инструментов, созданных под мои идеи.">Мобильные приложения и множество собственных программ и инструментов, созданных под мои идеи.</p>
+        </div>
+        <div class="about-card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><circle cx="13.5" cy="6.5" r="2.5"/><circle cx="6" cy="12" r="2"/><circle cx="17" cy="16" r="2"/><path d="M9 12h4.5M13.5 9v4"/></svg>
+          <h3 data-en="Design" data-ru="Дизайн">Дизайн</h3>
+          <p data-en="Interfaces, visual concepts, composition and atmosphere with attention to details." data-ru="Интерфейсы, визуальные концепции, композиция и атмосфера с вниманием к деталям.">Интерфейсы, визуальные концепции, композиция и атмосфера с вниманием к деталям.</p>
+        </div>
+        <div class="about-card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M10 9l5 3-5 3z"/></svg>
+          <h3 data-en="Video Editing" data-ru="Монтаж видео">Монтаж видео</h3>
+          <p data-en="Video editing, image morphing, transitions and visual effects for videos." data-ru="Монтаж видео, морфинг изображений, переходы и визуальные эффекты для роликов.">Монтаж видео, морфинг изображений, переходы и визуальные эффекты для роликов.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="portfolio">
+    <div class="container">
+      <h2 class="section-title" data-en="My Projects" data-ru="Мои проекты">Мои проекты</h2>
+
+      <article id="karosguard" class="project-card">
+        <div class="kicker" data-en="Featured Project" data-ru="Избранный проект">Избранный проект</div>
+        <div class="kg-head">
+          <img src="assets/karosguard-icon.svg" alt="">
+          <h3 style="margin:0">KarosGuard — Porn Blocker</h3>
+        </div>
+        <p class="project-description" data-en="A mobile application designed to block 18+ content, set screen time limits and keep a protection journal." data-ru="Мобильное приложение для блокировки 18+ контента, ограничения экранного времени и дневника защиты.">Мобильное приложение для блокировки 18+ контента, ограничения экранного времени и дневника защиты.</p>
+        <a href="https://play.google.com/store/apps/details?id=com.karosguard.app" class="google-play-btn" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" aria-hidden="true" width="30" height="30">
+            <path fill="#4285F4" d="M3.6 1.8c-.3.3-.5.8-.5 1.4v17.6c0 .6.2 1.1.5 1.4l.1.1 9.9-9.9v-.2L3.6 1.8z"/>
+            <path fill="#FBBC04" d="M16.9 15.5l-3.3-3.3v-.4l3.3-3.3.1.1 3.9 2.2c1.1.6 1.1 1.6 0 2.2l-3.9 2.2-.1.1z"/>
+            <path fill="#EA4335" d="M13.6 12.2L3.6 22.2c.4.4 1 .4 1.7 0l11.7-6.7-3.4-3.3z"/>
+            <path fill="#34A853" d="M13.6 11.8l3.4-3.3L5.3 1.8c-.7-.4-1.3-.4-1.7 0l10 10z"/>
+          </svg>
+          <div><span class="btn-sub" data-en="GET IT ON" data-ru="ДОСТУПНО В">ДОСТУПНО В</span><span class="btn-main">Google Play</span></div>
+        </a>
+        <div class="gallery">
+          <figure class="main"><img src="assets/kg-home.jpg" alt="KarosGuard — главный экран" width="640" height="1280"><figcaption data-en="Main application screen" data-ru="Главный экран приложения">Главный экран приложения</figcaption></figure>
+          <figure><img src="assets/kg-protected.jpg" alt="KarosGuard — Вы под защитой" loading="lazy" width="640" height="1280"><figcaption data-en="Protection is active" data-ru="Вы под защитой">Вы под защитой</figcaption></figure>
+          <figure><img src="assets/kg-limits.jpg" alt="KarosGuard — Лимиты" loading="lazy" width="640" height="1280"><figcaption data-en="App and site limits" data-ru="Лимиты для приложений и сайтов">Лимиты для приложений и сайтов</figcaption></figure>
+          <figure><img src="assets/kg-diary.jpg" alt="KarosGuard — Дневник защиты" loading="lazy" width="640" height="1280"><figcaption data-en="Protection journal" data-ru="Дневник защиты">Дневник защиты</figcaption></figure>
+          <figure><img src="assets/kg-settings.jpg" alt="KarosGuard — Настройки" loading="lazy" width="1500" height="663"><figcaption data-en="Settings" data-ru="Настройки">Настройки</figcaption></figure>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="kicker" data-en="Image Morphing" data-ru="Морфинг изображений">Морфинг изображений</div>
+        <h3>Image Morphing</h3>
+        <p class="project-description" data-en="Transforming two frames into video for a major project." data-ru="Преобразование двух кадров в видео для крупного проекта.">Преобразование двух кадров в видео для крупного проекта.</p>
+        <div class="project-video">
+          <video controls preload="metadata" playsinline poster="assets/morphing-poster.jpg">
+            <source src="assets/morphing.mp4" type="video/mp4">
+          </video>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <h2 class="section-title" data-en="Let's Connect" data-ru="Связаться со мной">Связаться со мной</h2>
+      <p data-en="Interested in collaborating or discussing a project? Reach out!" data-ru="Если хочешь обсудить проект или сотрудничество — напиши мне.">Если хочешь обсудить проект или сотрудничество — напиши мне.</p>
+      <div class="contact-links">
+        <a href="https://t.me/karos1" class="contact-button telegram" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.5 3.5 18.1 20c-.25 1.17-.9 1.45-1.83.9l-5.05-3.72-2.44 2.35c-.27.27-.5.5-1.03.5l.37-5.16 9.4-8.5c.41-.37-.09-.58-.64-.2L5.26 13.2.28 11.64c-1.08-.34-1.1-1.08.23-1.6L19.95 2.5c.9-.34 1.68.2 1.55 1Z"/></svg>
+          <span>Telegram</span>
+        </a>
+        <a href="mailto:shchegolevtomas@gmail.com" class="contact-button email">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M2.5 5.5h19v13h-19v-13Zm1.5 1.8v.4l8 5.3 8-5.3v-.4H4Zm16 2.2-7.17 4.77a1.5 1.5 0 0 1-1.66 0L4 9.5v7.5h16V9.5Z"/></svg>
+          <span>Email</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="hidden">
+    <div class="container" style="max-width:760px">
+      <h2 class="section-title" data-en="Hidden work" data-ru="Скрытые разработки">Скрытые разработки</h2>
+      <p style="text-align:center;color:var(--muted);margin-bottom:28px" data-en="Drafts, mini-projects and experiments. Open a spoiler to take a look." data-ru="Черновики, мини-проекты и эксперименты. Открой спойлер, чтобы посмотреть.">Черновики, мини-проекты и эксперименты. Открой спойлер, чтобы посмотреть.</p>
+
+      <details class="spoiler">
+        <summary>
+          <span data-en="YouTube Shorts — editing" data-ru="YouTube Shorts — монтаж">YouTube Shorts — монтаж</span>
+          <svg class="chev" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </summary>
+        <div class="spoiler-body">
+          <p data-en="A dynamic short-form piece. More spoilers can be added here later." data-ru="Динамичный короткий ролик. Сюда же можно добавлять новые спойлеры с другими работами.">Динамичный короткий ролик. Сюда же можно добавлять новые спойлеры с другими работами.</p>
+          <a href="https://www.youtube.com/shorts/UO5NMdiUhKU" class="yt-button" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31.5 31.5 0 0 0 0 12a31.5 31.5 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31.5 31.5 0 0 0 24 12a31.5 31.5 0 0 0-.5-5.8zM9.75 15.5v-7l6.5 3.5-6.5 3.5z"/></svg>
+            <span data-en="Watch on YouTube" data-ru="Смотреть на YouTube">Смотреть на YouTube</span>
+          </a>
+          <div class="shorts-player" data-id="UO5NMdiUhKU">
+            <img src="https://i.ytimg.com/vi/UO5NMdiUhKU/hqdefault.jpg" alt="">
+            <button class="shorts-play" type="button" aria-label="Play">
+              <span class="play-orb"><span><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></span>
+            </button>
+          </div>
+        </div>
+      </details>
+
+      <!-- Скопируй блок <details class="spoiler"> выше, чтобы добавить ещё скрытую разработку. -->
+    </div>
+  </section>
+</main>
+
+<footer><p data-en="© 2026 Tomas Shchegolev. All rights reserved." data-ru="© 2026 Tomas Shchegolev. Все права защищены.">© 2026 Tomas Shchegolev. Все права защищены.</p></footer>
+
+<script>
+(function(){
+  const btn=document.getElementById('langToggle');
+  const saved=localStorage.getItem('ts-lang');
+  function apply(lang){
+    document.querySelectorAll('[data-en]').forEach(el=>{el.textContent=el.dataset[lang];});
+    document.documentElement.lang=lang;
+    localStorage.setItem('ts-lang',lang);
+    btn.querySelectorAll('.lang-option').forEach(o=>o.classList.toggle('active',o.dataset.lang===lang));
+  }
+  if(saved==='en'||saved==='ru') apply(saved);
+  btn.addEventListener('click',()=>apply(document.documentElement.lang==='ru'?'en':'ru'));
+})();
+
+(function(){
+  document.querySelectorAll('.shorts-play').forEach(function(play){
+    play.addEventListener('click',function(){
+      const wrap=play.closest('.shorts-player');
+      const id=wrap.getAttribute('data-id');
+      wrap.innerHTML='<iframe src="https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1&rel=0" title="YouTube Shorts" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+    });
+  });
+})();
+</script>
+</body>
+</html>
