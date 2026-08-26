@@ -122,15 +122,15 @@
     text-decoration:none;box-shadow:0 0 16px rgba(59,130,246,.25);transition:all .2s ease-out;margin-top:24px;cursor:pointer}
   .project-detail-btn:hover{transform:translateX(4px);background:rgba(30,41,89,.85);border-color:rgba(147,197,253,.9);box-shadow:0 0 24px rgba(59,130,246,.45)}
 
-  .mockup-showcase{display:flex;align-items:center;justify-content:center;gap:14px;flex:1;max-width:540px}
-  .mockup-phone{position:relative;flex:1;max-width:165px;border-radius:22px;overflow:hidden;
-    border:2.5px solid rgba(71,85,105,.8);background:#030712;box-shadow:0 16px 36px rgba(0,0,0,.75);
+  .mockup-showcase{display:flex;align-items:center;justify-content:center;gap:14px;flex:1;max-width:580px}
+  .mockup-phone{position:relative;flex:1;max-width:176px;border-radius:24px;overflow:hidden;
+    border:2.5px solid rgba(71,85,105,.85);background:#030712;box-shadow:0 16px 36px rgba(0,0,0,.75);
     transition:transform .3s ease-out, box-shadow .3s ease-out}
   .mockup-phone::before{content:"";position:absolute;top:6px;left:50%;transform:translateX(-50%);width:28px;height:4px;
     border-radius:99px;background:rgba(255,255,255,.25);z-index:10}
   .mockup-phone img{width:100%;height:auto;display:block;object-fit:cover}
-  .mockup-phone-center{max-width:185px;flex:1.15;border-color:rgba(52,211,153,.65);
-    box-shadow:0 20px 48px rgba(16,185,129,.3),0 0 20px rgba(52,211,153,.2);transform:scale(1.04);z-index:2}
+  .mockup-phone-center{max-width:202px;flex:1.16;border-color:rgba(52,211,153,.75);
+    box-shadow:0 20px 48px rgba(16,185,129,.35),0 0 24px rgba(52,211,153,.25);transform:scale(1.06);z-index:2}
   .mockup-phone:hover{transform:translateY(-6px) scale(1.03);box-shadow:0 24px 44px rgba(0,0,0,.85),0 0 24px rgba(96,165,250,.4)}
   .mockup-phone-center:hover{transform:translateY(-8px) scale(1.08);box-shadow:0 26px 56px rgba(16,185,129,.45),0 0 30px rgba(52,211,153,.35)}
 
@@ -281,15 +281,6 @@
       <span data-en="I create mobile apps, crypto projects and " data-ru="Создаю мобильные приложения, проекты в крипте и занимаюсь ">Создаю мобильные приложения, проекты в крипте и занимаюсь </span><span class="hero-morph-pill" data-en="Image Morphing" data-ru="Image Morphing">Image Morphing</span><span data-en=" editing with special effects" data-ru=" монтажом со спецэффектами"> монтажом со спецэффектами</span>
     </p>
     <a href="#portfolio" class="cta-button" data-en="View My Work" data-ru="Посмотреть работы">Посмотреть работы</a>
-
-    <a class="hero-featured" href="#karosguard" aria-label="KarosGuard project">
-      <img class="featured-icon" src="assets/karosguard-icon.png" alt="KarosGuard">
-      <div>
-        <div class="kicker" data-en="FEATURED PROJECT" data-ru="FEATURED PROJECT">FEATURED PROJECT</div>
-        <div class="featured-title">KarosGuard</div>
-        <p data-en="Mobile application for protection and security with intelligent monitoring." data-ru="Мобильное приложение для защиты и безопасности с интеллектуальным мониторингом.">Мобильное приложение для защиты и безопасности с интеллектуальным мониторингом.</p>
-      </div>
-    </a>
   </section>
 
   <section id="about">
@@ -318,30 +309,36 @@
   </section>
 
   <section id="portfolio">
-    <div class="container">
+    <div class="container" style="max-width:1160px">
       <h2 class="section-title" data-en="Projects" data-ru="Проекты">Проекты</h2>
       <div class="section-title-line"></div>
 
       <!-- Главный проект KarosGuard -->
       <article id="karosguard" class="main-project-card">
         <div class="project-info">
-          <img src="assets/karosguard-icon.png" alt="KarosGuard" style="width:84px;height:84px;border-radius:20px;box-shadow:0 8px 24px rgba(249,115,22,.45)">
+          <img src="assets/karosguard-icon.png" alt="KarosGuard" style="width:88px;height:88px;border-radius:22px;box-shadow:0 8px 24px rgba(249,115,22,.45)">
           <div class="kicker" style="margin-top:14px" data-en="FEATURED PROJECT" data-ru="ГЛАВНЫЙ ПРОЕКТ">ГЛАВНЫЙ ПРОЕКТ</div>
           <h3>KarosGuard</h3>
           <p data-en="Mobile application for protection and security with intelligent monitoring." data-ru="Мобильное приложение для защиты и безопасности с интеллектуальным мониторингом.">Мобильное приложение для защиты и безопасности с интеллектуальным мониторингом.</p>
           <a href="https://play.google.com/store/apps/details?id=com.karosguard.app" class="project-detail-btn" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" style="width:20px;height:20px;flex-shrink:0" aria-hidden="true">
+              <path fill="#4285F4" d="M3.6 1.8c-.3.3-.5.8-.5 1.4v17.6c0 .6.2 1.1.5 1.4l.1.1 9.9-9.9v-.2L3.6 1.8z" />
+              <path fill="#FBBC04" d="M16.9 15.5l-3.3-3.3v-.4l3.3-3.3.1.1 3.9 2.2c1.1.6 1.1 1.6 0 2.2l-3.9 2.2-.1.1z" />
+              <path fill="#EA4335" d="M13.6 12.2L3.6 22.2c.4.4 1 .4 1.7 0l11.7-6.7-3.4-3.3z" />
+              <path fill="#34A853" d="M13.6 11.8l3.4-3.3L5.3 1.8c-.7-.4-1.3-.4-1.7 0l10 10z" />
+            </svg>
             <span data-en="Project details →" data-ru="Подробнее о проекте →">Подробнее о проекте →</span>
           </a>
         </div>
 
         <div class="mockup-showcase">
-          <!-- Левый телефон: kg-protected.jpg ("Вы под защитой") -->
+          <!-- Левый телефон: kg-settings.jpg ("Настройки") -->
           <div class="mockup-phone">
-            <img src="assets/kg-protected.jpg" alt="Вы под защитой" width="640" height="1280">
-          </div>
-          <!-- Центральный телефон: kg-settings.jpg ("Настройки") -->
-          <div class="mockup-phone mockup-phone-center">
             <img src="assets/kg-settings.jpg" alt="Настройки" width="640" height="1280">
+          </div>
+          <!-- Центральный телефон: kg-protected-main.jpg ("Вы под защитой") -->
+          <div class="mockup-phone mockup-phone-center">
+            <img src="assets/kg-protected-main.jpg" alt="Вы под защитой" width="640" height="1280">
           </div>
           <!-- Правый телефон: kg-diary.jpg ("Дневник защиты") -->
           <div class="mockup-phone">
@@ -352,32 +349,35 @@
 
       <!-- Нижний ряд: 2 карточки -->
       <div class="subprojects-grid">
-        <!-- Карточка 1: YouTube Shorts & Reels -->
+        <!-- Карточка 1: YouTube Shorts -->
         <article class="subproject-card">
           <div class="subproject-inner">
             <div style="flex:1">
-              <h3 data-en="YouTube Shorts & Reels" data-ru="YouTube Shorts & Reels">YouTube Shorts & Reels</h3>
-              <p data-en="Creating viral short-form videos for YouTube Shorts and Instagram Reels." data-ru="Создание вирусных коротких видео для YouTube Shorts и Instagram Reels.">Создание вирусных коротких видео для YouTube Shorts и Instagram Reels.</p>
-              <button type="button" class="project-detail-btn" id="shortsToggleBtn">
+              <h3 data-en="YouTube Shorts" data-ru="YouTube Shorts">YouTube Shorts</h3>
+              <p data-en="Creating viral short-form videos for YouTube Shorts." data-ru="Создание вирусных коротких видео для YouTube Shorts.">Создание вирусных коротких видео для YouTube Shorts.</p>
+              <button type="button" class="project-detail-btn" id="shortsToggleBtn" onclick="playShort('ezRZMZL00-Y')">
+                <svg viewBox="0 0 24 24" style="width:20px;height:20px;flex-shrink:0;fill:#FF0000" aria-hidden="true">
+                  <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                </svg>
                 <span data-en="Watch examples →" data-ru="Смотреть примеры →">Смотреть примеры →</span>
               </button>
             </div>
             <div class="shorts-previews">
-              <!-- Instagram Reel 1 -->
-              <a href="https://www.instagram.com/p/DaSxv0SqJMw/" target="_blank" rel="noopener noreferrer" class="shorts-thumb" title="Instagram Reel 1">
-                <img src="assets/avatar-poster.jpg" alt="Instagram Reel 1">
-                <div class="play-mini"><span style="background:linear-gradient(45deg,#f59e0b,#ec4899,#8b5cf6)"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></div>
-              </a>
-              <!-- YouTube Shorts -->
-              <div class="shorts-thumb" onclick="toggleShortsPlayer()" title="YouTube Shorts">
-                <img src="https://i.ytimg.com/vi/4Unh4GmdR-8/hqdefault.jpg" alt="YouTube Shorts">
-                <div class="play-mini"><span><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></div>
+              <!-- Video 1 -->
+              <div class="shorts-thumb" onclick="playShort('ezRZMZL00-Y')" title="YouTube Shorts 1">
+                <img src="https://i.ytimg.com/vi/ezRZMZL00-Y/hqdefault.jpg" alt="YouTube Shorts 1">
+                <div class="play-mini"><span style="background:#dc2626"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></div>
               </div>
-              <!-- Instagram Reel 2 -->
-              <a href="https://www.instagram.com/p/DcHIzshqZd2/" target="_blank" rel="noopener noreferrer" class="shorts-thumb" title="Instagram Reel 2">
-                <img src="assets/morphing-poster.jpg" alt="Instagram Reel 2">
-                <div class="play-mini"><span style="background:linear-gradient(45deg,#f59e0b,#ec4899,#8b5cf6)"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></div>
-              </a>
+              <!-- Video 2 -->
+              <div class="shorts-thumb" onclick="playShort('9LOF4bvmu4s')" title="YouTube Shorts 2">
+                <img src="https://i.ytimg.com/vi/9LOF4bvmu4s/hqdefault.jpg" alt="YouTube Shorts 2">
+                <div class="play-mini"><span style="background:#dc2626"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></div>
+              </div>
+              <!-- Video 3 -->
+              <div class="shorts-thumb" onclick="playShort('4Unh4GmdR-8')" title="YouTube Shorts 3">
+                <img src="https://i.ytimg.com/vi/4Unh4GmdR-8/hqdefault.jpg" alt="YouTube Shorts 3">
+                <div class="play-mini"><span style="background:#dc2626"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></div>
+              </div>
             </div>
           </div>
           <div id="shortsPlayerWrap" class="video-modal-wrap" style="display:none">
@@ -391,7 +391,12 @@
             <div style="flex:1">
               <h3 data-en="Image Morphing" data-ru="Image Morphing">Image Morphing</h3>
               <p data-en="Image morphing from frame A to frame B with realistic visual special effects." data-ru="Морфинг изображений из кадра А в кадр Б с реалистичными спецэффектами.">Морфинг изображений из кадра А в кадр Б с реалистичными спецэффектами.</p>
-              <button type="button" class="project-detail-btn" id="morphToggleBtn">
+              <button type="button" class="project-detail-btn" id="morphToggleBtn" onclick="toggleMorphPlayer()">
+                <svg viewBox="0 0 24 24" style="width:20px;height:20px;flex-shrink:0;color:#67e8f9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3L12 3z"/>
+                  <path d="M19 3v4"/>
+                  <path d="M21 5h-4"/>
+                </svg>
                 <span data-en="Watch examples →" data-ru="Смотреть примеры →">Смотреть примеры →</span>
               </button>
             </div>
@@ -422,7 +427,7 @@
         </a>
         <a href="mailto:shchegolevtomas@gmail.com" class="contact-button email">
           <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M2.5 5.5h19v13h-19v-13Zm1.5 1.8v.4l8 5.3 8-5.3v-.4H4Zm16 2.2-7.17 4.77a1.5 1.5 0 0 1-1.66 0L4 9.5v7.5h16V9.5Z"/></svg>
-          <span>Email</span>
+          <span>shchegolevtomas@gmail.com</span>
         </a>
       </div>
     </div>
@@ -441,11 +446,12 @@
         </summary>
         <div class="spoiler-body">
           <p data-en="A dynamic short-form piece. More spoilers can be added here later." data-ru="Динамичный короткий ролик. Сюда же можно добавлять новые спойлеры с другими работами.">Динамичный короткий ролик. Сюда же можно добавлять новые спойлеры с другими работами.</p>
-          <a href="https://www.youtube.com/shorts/4Unh4GmdR-8" class="project-detail-btn" style="background:#ef4444;border-color:#ef4444;color:#fff;margin-bottom:20px" target="_blank" rel="noopener noreferrer">
+          <a href="https://youtube.com/shorts/ezRZMZL00-Y" class="project-detail-btn" style="background:#ef4444;border-color:#ef4444;color:#fff;margin-bottom:20px" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" style="width:18px;height:18px;fill:#fff" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
             <span data-en="Watch on YouTube" data-ru="Смотреть на YouTube">Смотреть на YouTube</span>
           </a>
           <div style="aspect-ratio:9/16;max-width:280px;margin:0 auto;border-radius:18px;overflow:hidden;border:2px solid rgba(239,68,68,.35);box-shadow:0 12px 36px rgba(0,0,0,.6);background:#000">
-            <iframe src="https://www.youtube-nocookie.com/embed/4Unh4GmdR-8?autoplay=0&rel=0" style="width:100%;height:100%;border:none" title="YouTube Shorts" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe src="https://www.youtube-nocookie.com/embed/ezRZMZL00-Y?autoplay=0&rel=0" style="width:100%;height:100%;border:none" title="YouTube Shorts" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           </div>
         </div>
       </details>
@@ -469,12 +475,19 @@
   btn.addEventListener('click',()=>apply(document.documentElement.lang==='ru'?'en':'ru'));
 })();
 
+function playShort(id){
+  const wrap = document.getElementById('shortsPlayerWrap');
+  const iframe = document.getElementById('shortsIframe');
+  if(!id) id = 'ezRZMZL00-Y';
+  wrap.style.display = 'block';
+  iframe.src = 'https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1&rel=0';
+}
+
 function toggleShortsPlayer(){
   const wrap = document.getElementById('shortsPlayerWrap');
   const iframe = document.getElementById('shortsIframe');
   if(wrap.style.display === 'none'){
-    wrap.style.display = 'block';
-    iframe.src = 'https://www.youtube-nocookie.com/embed/UO5NMdiUhKU?autoplay=1&rel=0';
+    playShort('ezRZMZL00-Y');
   } else {
     wrap.style.display = 'none';
     iframe.src = '';
@@ -492,9 +505,6 @@ function toggleMorphPlayer(){
     vid.pause();
   }
 }
-
-document.getElementById('shortsToggleBtn').addEventListener('click', toggleShortsPlayer);
-document.getElementById('morphToggleBtn').addEventListener('click', toggleMorphPlayer);
 </script>
 </body>
 </html>
