@@ -28,15 +28,17 @@ if (-not (Test-Path ".git")) {
 }
 
 Write-Host "Добавляем файлы..." -ForegroundColor Yellow
-git add .nojekyll favicon.svg index.html README.md assets/
+git add .nojekyll CNAME favicon.svg index.html portfolio.css portfolio.js README.md assets/
+if ($LASTEXITCODE -ne 0) { throw "Не удалось подготовить файлы к публикации." }
 
 $status = git status --porcelain
 if ($status) {
     Write-Host "Создаём коммит..." -ForegroundColor Yellow
-    git commit -m "Update portfolio with full visual effects, animations and assets"
+    git commit -m "Update portfolio content and design"
+    if ($LASTEXITCODE -ne 0) { throw "Не удалось создать коммит." }
     
     Write-Host "Отправляем на GitHub (main branch)..." -ForegroundColor Yellow
-    git push -u origin main --force
+    git push -u origin main
     
     if ($LASTEXITCODE -eq 0) {
         Write-Host "`nГотово! Файлы успешно выгружены на GitHub." -ForegroundColor Green
